@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Remigton";
+    src: url(/fonts/PermianSlabSerifTypeface.otf);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url("/images/fon.png");
+}
+
+.text_style {
+    letter-spacing: 1.2px;
+    font-family: 'Remigton';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4em;
+}
+.list_skills {
+    margin-top: 10px;
+    text-align: center;
+}
+.list_skills div{
+    display: inline;
+}
+
+.skill {
+    cursor: pointer;
+}
+
+
+#advert_text
+{
+
+}
+
