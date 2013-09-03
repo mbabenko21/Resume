@@ -6,7 +6,9 @@
     {
       name: "me",
       src: "look-me",
+      link: "about-me",
       thumbnail: "/images/man.png",
+      background: "",
       w: 128,
       h: 128,
       quality: [
@@ -23,7 +25,9 @@
     }, {
       name: "php",
       src: "look-php",
+      link: "php",
       thumbnail: "/images/php.png",
+      background: "",
       w: 128,
       h: 100,
       quality: [
@@ -44,7 +48,9 @@
     }, {
       name: "node",
       src: "look-node",
+      link: "node.js",
       thumbnail: "/images/node.png",
+      background: "",
       w: 128,
       h: 128,
       quality: [
@@ -61,7 +67,9 @@
     }, {
       name: "database",
       src: "look-database",
+      link: "database",
       thumbnail: "/images/database.png",
+      background: "",
       w: 128,
       h: 128,
       quality: [
@@ -74,7 +82,9 @@
     }, {
       name: "javascript",
       src: "look-js",
+      link: "javascript",
       thumbnail: "/images/javascript.png",
+      background: "",
       w: 128,
       h: 128,
       quality: [
@@ -91,7 +101,9 @@
     }, {
       name: "linux",
       src: "look-linux",
+      link: "unix",
       thumbnail: "/images/ubuntu.png",
+      background: "",
       w: 128,
       h: 128,
       quality: [
@@ -102,7 +114,9 @@
     }, {
       name: "git",
       src: "look-git",
+      link: "git",
       thumbnail: "/images/git.png",
+      background: "",
       w: 128,
       h: 128,
       quality: [

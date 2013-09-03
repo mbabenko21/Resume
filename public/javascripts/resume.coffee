@@ -6,7 +6,6 @@ class SkillView extends Backbone.View
   template: $("#skill-template").html()
   events:
     "click": "overSkill"
-    "focusout": "closeSkill"
   initialize: () ->
     #console.log @model.toJSON().quality
     @collection = new QualityCollection(@model.toJSON().quality)
@@ -16,7 +15,8 @@ class SkillView extends Backbone.View
     @$el.html tpl @model.toJSON()
     return @
   overSkill: (event) ->
-    @qualityContainer.find(".quality").remove()
+    Router.navigate "!/"+@model.toJSON().link
+    @qualityContainer.find("div").remove()
     that = @
     cnt = @$el.find(".skill").data("src")
     #console.log @model.toJSON()
@@ -31,13 +31,19 @@ class SkillView extends Backbone.View
      @qualityContainer.append qualityView.render().el
      @qualityContainer.show()
      #console.log quality.toJSON();
+
 ####################################################
 class QualityView extends Backbone.View
+  className: "item"
   template: $("#quality-template").html()
+  events:
+    "click": "openQuality"
   render: () ->
     tpl = _.template @template
-    #console.log @template
     @$el.html tpl @model.toJSON()
+    return @
+  openQuality: () ->
+    console.log @model.toJSON()
     return @
 #######################################################
 class SkillModel extends Backbone.Model
@@ -64,6 +70,7 @@ class ResumeView extends Backbone.View
     @render
   render: () ->
     that = @
+    Router.navigate @collection.at(0).toJSON().link
     _.each(
       @collection.models,
       (item) -> that.renderSkill(item)

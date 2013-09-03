@@ -18,6 +18,7 @@ block content
     div.row.skill-look.hidden
         +lookPHP()
     script(type="text/javascript", src="/javascripts/skills.min.js")
+    script(type="text/javascript", src="/javascripts/router.min.js")
     script(type="text/javascript", src="/javascripts/resume.min.js")
     script.
-        $(document).ready(function(){Resume.render();$('.my-skills').find('.skill-container').first().click()});
+        $(document).ready(function(){Resume.render(); Backbone.history.start();$('.my-skills').find('.skill-container').first().click();});

@@ -21,8 +21,7 @@
     SkillView.prototype.template = $("#skill-template").html();
 
     SkillView.prototype.events = {
-      "click": "overSkill",
-      "focusout": "closeSkill"
+      "click": "overSkill"
     };
 
     SkillView.prototype.initialize = function() {
@@ -38,7 +37,8 @@
 
     SkillView.prototype.overSkill = function(event) {
       var cnt, that;
-      this.qualityContainer.find(".quality").remove();
+      Router.navigate("!/" + this.model.toJSON().link);
+      this.qualityContainer.find("div").remove();
       that = this;
       cnt = this.$el.find(".skill").data("src");
       return _.each(this.collection.models, function(item) {
@@ -67,12 +67,23 @@
       return _ref1;
     }
 
+    QualityView.prototype.className = "item";
+
     QualityView.prototype.template = $("#quality-template").html();
+
+    QualityView.prototype.events = {
+      "click": "openQuality"
+    };
 
     QualityView.prototype.render = function() {
       var tpl;
       tpl = _.template(this.template);
       this.$el.html(tpl(this.model.toJSON()));
+      return this;
+    };
+
+    QualityView.prototype.openQuality = function() {
+      console.log(this.model.toJSON());
       return this;
     };
 
@@ -161,6 +172,7 @@
     ResumeView.prototype.render = function() {
       var that;
       that = this;
+      Router.navigate(this.collection.at(0).toJSON().link);
       return _.each(this.collection.models, function(item) {
         return that.renderSkill(item);
       }, this);
