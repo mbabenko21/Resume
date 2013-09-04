@@ -3,7 +3,9 @@
   requirejs.config({
     baseUrl: 'js',
     paths: {
-      text: 'lib/text'
+      text: 'lib/text',
+      markdownConverter: 'lib/requirejs-plugins/lib/Markdown.Converter',
+      mdown: 'lib/requirejs-plugins/src/mdown'
     },
     shim: {
       'lib/underscore-min': {
@@ -21,7 +23,8 @@
 
   require(["resume"], function(BabenkoResume) {
     window.BabenkoResume = new BabenkoResume();
-    return $('body').find(".skill-container").first().click();
+    $('body').find(".skill-container").first().click();
+    return hljs.initHighlighting();
   });
 
 }).call(this);

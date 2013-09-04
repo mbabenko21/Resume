@@ -22,6 +22,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'app')));
   app.use('/js/lib/', express.static(path.join(__dirname, "node_modules/requirejs/")));
+  //app.use('/md/', express.static(path.join(__dirname, "node_modules/markdown/lib/")));
 });
 
 app.configure('development', function(){

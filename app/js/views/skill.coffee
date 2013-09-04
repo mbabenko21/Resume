@@ -30,17 +30,16 @@ define([
         @$el.html @template @model.toJSON()
         return @
       overSkill: (event) ->
-        @router.navigate "!/"+@model.toJSON().link
+        @pageTitle = new PageTitleView model: @model
         @qualityContainer.find(".quality").remove()
         that = @
-        cnt = @$el.find(".skill").data("src")
-        #console.log @model.toJSON()
+
         _.each(
           @collection.models,
           (item) -> that.renderQualities(item)
-          @)
-
-        @pageTitle = new PageTitleView model: @model
+          @
+        )
+        @router.navigate "!/"+@model.toJSON().link, {trigger: true}
         @changePageTitle(@model)
       renderQualities: (quality) ->
         qualityView = new QualityView model: quality

@@ -2,13 +2,49 @@
     font-family: "Remigton";
     src: url(/fonts/PermianSlabSerifTypeface.otf);
 }
+@font-face{
+    font-family: 'WebSymbolsLigaRegular';
+    src: url('/fonts/WebSymbolsLiga-Regular.eot');
+    src: url('/fonts/WebSymbolsLiga-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/WebSymbolsLiga-Regular.woff') format('woff'),
+    url('/fonts/WebSymbolsLiga-Regular.ttf') format('truetype'),
+    url('/fonts/WebSymbolsLiga-Regular.svg#WebSymbolsRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 
 html, body {
     height: 100%;
 }
 
 body {
-    background: url("/images/fon.png");
+    background: url("/images/fon1.png");
+}
+
+hr {
+    list-style: decimal;
 }
 
 .text_style {
@@ -34,5 +70,15 @@ body {
 #advert_text
 {
 
+}
+
+.look-page {
+    font-family: 'Comfortaa';
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
+
+.look-page a {
+    color: #2d6987;
 }
 

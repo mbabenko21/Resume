@@ -36,16 +36,17 @@
       };
 
       SkillView.prototype.overSkill = function(event) {
-        var cnt, that;
-        this.router.navigate("!/" + this.model.toJSON().link);
+        var that;
+        this.pageTitle = new PageTitleView({
+          model: this.model
+        });
         this.qualityContainer.find(".quality").remove();
         that = this;
-        cnt = this.$el.find(".skill").data("src");
         _.each(this.collection.models, function(item) {
           return that.renderQualities(item);
         }, this);
-        this.pageTitle = new PageTitleView({
-          model: this.model
+        this.router.navigate("!/" + this.model.toJSON().link, {
+          trigger: true
         });
         return this.changePageTitle(this.model);
       };
