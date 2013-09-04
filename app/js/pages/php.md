@@ -10,7 +10,11 @@
 * [Symfony 2][sym-fw]
 * [Laravel][lar-fw]
 
-Знаком с принципами работы [Composer][composer].
+Умею пользоваться популярными [ORM][orm], например, [Doctrine][doctrine]. Также, знаком с [ADODb-PHP][ado-php].
+
+Знаю и умею использовать библиотеку [Simple HTML Dom][shd] для парсинга сайтов. Использовал ее для генерации контента для сайта [http://olyrics.com][olyrics]
+- - -
+Несомненно, это не все навыки PHP, которыми я владею.
 
 [ооп]: <http://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование> "Объектно-ориентированое программирование"
 [mvc]: <http://ru.wikipedia.org/wiki/Model-View-Controller> "Модель-Представление-Контроллер"
@@ -20,3 +24,8 @@
 [sym-fw]: <http://symfony.com/> "Symfony 2 Framework"
 [lar-fw]: <http://laravel.com/> "Laravel Framework"
 [composer]: <http://getcomposer.org/> "Composer"
+[orm]: <http://ru.wikipedia.org/wiki/ORM> "Object-relational mapping"
+[doctrine]: <http://www.doctrine-project.org/> "Doctrine-ORM"
+[ado-php]: <http://adodb.sourceforge.net/> "Ado-DB PHP"
+[shd]: <http://simplehtmldom.sourceforge.net/manual.htm> "Simple HTML Dom"
+[olyrics]: <http://olyrics.com>

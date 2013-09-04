@@ -15,6 +15,7 @@ define([],
           {title: "Трудолюбие"},
           {title: "Обучаемость"},
           {title: "Коммуникабельность"}
+          {title: "Работа в комманде"}
         ]
       },
       {
@@ -30,11 +31,31 @@ define([],
           {title: "Symfony 2"},
           {title: "Doctrine"},
           {title: "Composer"},
-          {title: "ООП"},
+          {title: "Объектно-ореентированное программирование"},
           {title: "Smarty"},
-          {title: "MVC"}
+          {title: "Модель-Представление-Контроллер"},
+          {title: "Kohana"}
+          {title: "Laravel"}
+          {title: "Code Ingniter"}
+          {title: "Zend Framework"}
+          {title: "Doctrine Mongoose-ODM"}
+          {title: "Шаблоны проектирования"}
+          {title: "SimpleHTMLDom"}
         ]
       },
+      {
+        name: "database",
+        src: "look-database",
+        link: "database",
+        page_title: "Знания баз данных",
+        thumbnail: "/images/database.png",
+        background: "",
+        w: 100, h: 100,
+        quality: [
+          {title: "Mysql"},
+          {title: "MongoDB"}
+        ]
+      }
       {
         name: "node",
         src: "look-node",
@@ -51,26 +72,13 @@ define([],
         ]
       }
       {
-        name: "database",
-        src: "look-database",
-        link: "database",
-        page_title: "Знания баз данных",
-        thumbnail: "/images/database.png",
-        background: "",
-        w: 128, h: 128,
-        quality: [
-          {title: "Mysql"},
-          {title: "MongoDB"}
-        ]
-      },
-      {
         name: "javascript",
         src: "look-js",
         link: "javascript",
         page_title: "Javascript. Светлое будующее",
         thumbnail: "/images/javascript.png",
         background: "",
-        w: 128, h: 128,
+        w: 100, h: 100,
         quality: [
           {title: "JQuery"},
           {title: "BackboneJS"},
@@ -85,7 +93,7 @@ define([],
         page_title: "Использование Linux",
         thumbnail: "/images/ubuntu.png",
         background: "",
-        w: 128, h: 128,
+        w: 100, h: 100,
         quality: [
           {title: "unix-console"}
         ]
@@ -97,7 +105,7 @@ define([],
         page_title: "Использование системы контролля версий",
         thumbnail: "/images/git.png",
         background: "",
-        w: 128, h: 128,
+        w: 100, h: 100,
         quality: [
           {title: "Github"},
           {title: "Bitbucket"}
