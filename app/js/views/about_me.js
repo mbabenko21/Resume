@@ -23,7 +23,6 @@
       AboutMeView.prototype.render = function() {
         var tpl;
         tpl = _.template(am);
-        console.log(tpl());
         this.model.set({
           html: tpl()
         });
