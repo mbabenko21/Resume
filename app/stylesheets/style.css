@@ -45,6 +45,7 @@ body {
 
 hr {
     list-style: decimal;
+    background-color: #000000;
 }
 
 .text_style {
@@ -78,6 +79,7 @@ hr {
     letter-spacing: 1.2px;
     line-height: 1.7;
     text-align: center;
+    background-color: #ffffff;
 }
 
 .look-page a {
