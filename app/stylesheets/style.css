@@ -76,6 +76,8 @@ hr {
     font-family: 'Comfortaa';
     font-size: 15px;
     letter-spacing: 1.2px;
+    line-height: 1.7;
+    text-align: center;
 }
 
 .look-page a {
