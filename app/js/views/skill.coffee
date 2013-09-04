@@ -38,7 +38,8 @@ define([
           (item) -> that.renderQualities(item)
           @
         )
-        $(".skill-container").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100')
+        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100')
+        $("body").find(".skill.opacity-70").removeClass('opacity-70')
         $(event.target).removeClass('opacity-70').addClass('opacity-100')
         @router.navigate "!/"+@model.toJSON().link, {trigger: true}
         @changePageTitle(@model)

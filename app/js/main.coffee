@@ -16,6 +16,7 @@ requirejs.config
 require(["resume"],
   (BabenkoResume) ->
     window.BabenkoResume = new BabenkoResume()
-    $('body').find(".skill-container").find('img').first().click().addClass('opacity-100')
+    $('body').find(".skill-container").first().find('.skill').click()
+    $('body').find(".skill-container").first().find('img').addClass('opacity-100')
     hljs.initHighlighting()
 )

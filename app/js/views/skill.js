@@ -45,7 +45,8 @@
         _.each(this.collection.models, function(item) {
           return that.renderQualities(item);
         }, this);
-        $(".skill-container").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100');
+        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100');
+        $("body").find(".skill.opacity-70").removeClass('opacity-70');
         $(event.target).removeClass('opacity-70').addClass('opacity-100');
         this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
