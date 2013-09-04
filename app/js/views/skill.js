@@ -31,7 +31,7 @@
       };
 
       SkillView.prototype.render = function() {
-        this.$el.html(this.template(this.model.toJSON()));
+        this.$el.html(this.template(this.model));
         return this;
       };
 
@@ -45,6 +45,8 @@
         _.each(this.collection.models, function(item) {
           return that.renderQualities(item);
         }, this);
+        $(".skill-container").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100');
+        $(event.target).removeClass('opacity-70').addClass('opacity-100');
         this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });

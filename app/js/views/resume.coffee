@@ -22,5 +22,4 @@ define([
       that = @
       skillView = new SkillView model: skill, router: that.resume.controller
       @$el.append skillView.render().el
-
 )

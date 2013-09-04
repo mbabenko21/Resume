@@ -23,7 +23,7 @@
 
   require(["resume"], function(BabenkoResume) {
     window.BabenkoResume = new BabenkoResume();
-    $('body').find(".skill-container").first().click();
+    $('body').find(".skill-container").find('img').first().click().addClass('opacity-100');
     return hljs.initHighlighting();
   });
 

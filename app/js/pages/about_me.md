@@ -1,7 +1,13 @@
 #### Привет **%username%**!
 
 Меня зовут Максим, мне 23 года и я занимаюсь Web-разработкой. Мой общий опыт разработки сайтов около 5 лет.
-Работал в компании **Hotger**. Был задействован в проектах [http://flvto.com][flvto], [http://olyrics.com][olyrics], [http://britanium.com][britanium]
+Работал в компании **Hotger**.
+Был задействован в проектах
+
+*   [http://flvto.com][flvto]
+*   [http://olyrics.com][olyrics]
+*   [http://britanium.com][britanium]
+
 в качестве PHP-программиста
 - - -
 ### Как со мной связаться?
