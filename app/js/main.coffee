@@ -22,4 +22,5 @@ requirejs.config({
 require(["resume"],
   (BabenkoResume) ->
     window.BabenkoResume = new BabenkoResume()
+    $('body').find(".skill-container").first().click()
 )

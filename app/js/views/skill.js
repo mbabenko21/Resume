@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["collections/qualities", "views/quality", "text!templates/skill.html"], function(QualityCollection, QualityView, template) {
+  define(["collections/qualities", "views/quality", "text!templates/skill.html", "views/page", "controller", "models/page_title"], function(QualityCollection, QualityView, template, PageTitleView, ResumeController, PageTitleModel) {
     var SkillView, _ref;
     return SkillView = (function(_super) {
       __extends(SkillView, _super);
@@ -22,12 +22,12 @@
       SkillView.prototype.template = _.template(template);
 
       SkillView.prototype.events = {
-        "click": "overSkill",
-        "focusout": "closeSkill"
+        "click": "overSkill"
       };
 
       SkillView.prototype.initialize = function() {
-        return this.collection = new QualityCollection(this.model.toJSON().quality);
+        this.collection = new QualityCollection(this.model.toJSON().quality);
+        return this.router = new ResumeController();
       };
 
       SkillView.prototype.render = function() {
@@ -37,12 +37,17 @@
 
       SkillView.prototype.overSkill = function(event) {
         var cnt, that;
+        this.router.navigate("!/" + this.model.toJSON().link);
         this.qualityContainer.find(".quality").remove();
         that = this;
         cnt = this.$el.find(".skill").data("src");
-        return _.each(this.collection.models, function(item) {
+        _.each(this.collection.models, function(item) {
           return that.renderQualities(item);
         }, this);
+        this.pageTitle = new PageTitleView({
+          model: this.model
+        });
+        return this.changePageTitle(this.model);
       };
 
       SkillView.prototype.renderQualities = function(quality) {
@@ -52,6 +57,11 @@
         });
         this.qualityContainer.append(qualityView.render().el);
         return this.qualityContainer.show();
+      };
+
+      SkillView.prototype.changePageTitle = function(model) {
+        this.pageTitle.model = model;
+        return this.pageTitle.render();
       };
 
       return SkillView;

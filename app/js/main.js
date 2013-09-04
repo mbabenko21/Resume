@@ -20,7 +20,8 @@
   });
 
   require(["resume"], function(BabenkoResume) {
-    return window.BabenkoResume = new BabenkoResume();
+    window.BabenkoResume = new BabenkoResume();
+    return $('body').find(".skill-container").first().click();
   });
 
 }).call(this);

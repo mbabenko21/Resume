@@ -16,6 +16,7 @@
       ResumeView.prototype.el = $(".resume-container");
 
       ResumeView.prototype.initialize = function(app) {
+        this.resume = app;
         this.collection = new SkillsCollection(app.skills);
         return this.render;
       };
@@ -23,15 +24,20 @@
       ResumeView.prototype.render = function() {
         var that;
         that = this;
-        return _.each(this.collection.models, function(item) {
+        _.each(this.collection.models, function(item) {
           return that.renderSkill(item);
         }, this);
+        this.resume.controller.navigate("!/" + this.collection.at(0).toJSON().link);
+        this.$el.find(".skill").first().click();
+        return this;
       };
 
       ResumeView.prototype.renderSkill = function(skill) {
-        var skillView;
+        var skillView, that;
+        that = this;
         skillView = new SkillView({
-          model: skill
+          model: skill,
+          router: that.resume.controller
         });
         return this.$el.append(skillView.render().el);
       };
