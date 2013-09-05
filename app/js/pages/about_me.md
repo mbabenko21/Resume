@@ -12,7 +12,7 @@
 
 ### flvto.com
 
-Работал в комманде разработчиков программы **FLVTo Downloader**.
+Работал в комманде разработчиков программы [**FLVTo Downloader**][fvtd] (ссылка на загрузку программы).
 Моей задачей было написание скрипта сохранения статистики. Кроме того, я делал с помощью [Google Charts][gch].
 Примера, к сожалению, не имею, потому что он остался на dev-сервере.
 
@@ -26,6 +26,7 @@
 ### britanium.com
 
 Моей задачей была генерация библиотеки для сайта, сохранение статистики, проверка целостности библиотеки.
+Также, моей задачей было написание программы автоматической нарезки видео-файлов с использованием [ffmpeg][ffmpg]
 
 - - -
 
@@ -40,3 +41,5 @@
 [last]: <http://last.fm> "Last.FM"
 [mb]: <http://musicbrainz.org/> "Musicbrainz"
 [gch]: <https://developers.google.com/chart/> "Google Charts Library"
+[ffmpg]: <http://ffmpeg.org/> "FFMPEG"
+[fvtd]: <http://www.flvto.com/facebook/index/id/8/> "FLVTO DOWNLOADER"
