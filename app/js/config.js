@@ -143,6 +143,10 @@
         h: 100,
         quality: [
           {
+            title: "Сайт-визитка"
+          }, {
+            title: "Likedimion"
+          }, {
             title: "flvto.com"
           }, {
             title: "olyrics.com"

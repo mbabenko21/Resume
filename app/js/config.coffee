@@ -106,6 +106,8 @@ define([],
         background: ""
         w: 100, h: 100
         quality: [
+          {title: "Сайт-визитка"}
+          {title: "Likedimion"}
           {title: "flvto.com"}
           {title: "olyrics.com"}
           {title: "britanium.com"}
