@@ -99,19 +99,6 @@ define([],
         ]
       },
       {
-        name: "git",
-        src: "look-git",
-        link: "git",
-        page_title: "Использование системы контролля версий",
-        thumbnail: "/images/git.png",
-        background: "",
-        w: 100, h: 100,
-        quality: [
-          {title: "Github"},
-          {title: "Bitbucket"}
-        ]
-      }
-      {
         name: "portfolio"
         src: "portfolio-look"
         link: "portfolio"
@@ -122,6 +109,19 @@ define([],
           {title: "flvto.com"}
           {title: "olyrics.com"}
           {title: "britanium.com"}
+        ]
+      }
+      {
+        name: "git",
+        src: "look-git",
+        link: "git",
+        page_title: "Использование системы контролля версий",
+        thumbnail: "/images/git.png",
+        background: "",
+        w: 100, h: 100,
+        quality: [
+          {title: "Github"},
+          {title: "Bitbucket"}
         ]
       }
       {
