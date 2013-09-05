@@ -156,6 +156,23 @@
           }
         ]
       }, {
+        name: "portfolio",
+        src: "portfolio-look",
+        link: "portfolio",
+        page_title: "Мое портфолио",
+        background: "",
+        w: 100,
+        h: 100,
+        quality: [
+          {
+            title: "flvto.com"
+          }, {
+            title: "olyrics.com"
+          }, {
+            title: "britanium.com"
+          }
+        ]
+      }, {
         name: "contacts",
         src: "contacts-look",
         link: "contact-me",
