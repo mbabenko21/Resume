@@ -40,7 +40,8 @@
         this.model.set({
           html: this.page()
         });
-        return this.renderPage();
+        this.renderPage();
+        return this.$el.find('a').attr('target', '_blank');
       };
 
       return PageContainer;

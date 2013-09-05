@@ -1,10 +1,10 @@
 Умею пользоваться linux-консолью, знаю cli-программы
 
-* ffmpeg
-* git
-* npm
-* node
-* mongodb
+* **ffmpeg**
+* **git**
+* **npm**
+* **node**
+* **mongodb**
 
 Имею опыт работы с **nginx**, **apache** - создание виртуальных хостов
 

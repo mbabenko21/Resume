@@ -1,10 +1,17 @@
-### Сайт-визитка
+### [Сайт-визитка][resume]
 
 Для создание этого сайта я использовал библиотеки [BackboneJS][backbone] и [RequireJS][requirejs].
 
 Сайт написан в форме [AMD][amd]-модулей на [CoffeeScript][cs], скомпилированном в **Javascript**.
 
 Страницы контента написаны в [markdown][md]-формате, что облегчает создание страниц.
+- - -
+### [Likedimion][ld]
+
+Это мой хобби проект, которым я занимаюсь в свободное время.
+
+Представляет из себя сервер для текстовой онлайн-игры.
+Написан на PHP с использованием **Doctrine** и базы данных **mysql**
 - - -
 ### [flvto.com][flvto]
 
@@ -42,3 +49,5 @@
 [requirejs]: <http://requirejs.org/> "Require JS"
 [cs]: <http://coffeescript.org/> "Coffee Script language"
 [md]: <http://daringfireball.net/projects/markdown> "Markdown"
+[ld]: <https://github.com/mbabenko21/likedimion> "Likedimion"
+[resume]: <https://github.com/mbabenko21/Resume> "Сайт-визитка"
