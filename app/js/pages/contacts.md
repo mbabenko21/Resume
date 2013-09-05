@@ -1,4 +1,4 @@
-Связаться со мной можно
+Контакты:
 
 * Email      **mbabenko21@gmail.com**
 * Skype:    **maks_dsa**
