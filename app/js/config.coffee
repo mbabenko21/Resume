@@ -27,7 +27,7 @@ define([],
         thumbnail: "/images/php.png",
         background: "",
         w: 128,
-        h: 100,
+        h: 128,
         quality: [
           {title: "Symfony 2"},
           {title: "Doctrine"},
@@ -49,7 +49,7 @@ define([],
         page_title: "Знания баз данных",
         thumbnail: "/images/database.png",
         background: "",
-        w: 100, h: 100,
+        w: 128, h: 128,
         quality: [
           {title: "Mysql"},
           {title: "MongoDB"}
