@@ -23,6 +23,8 @@
             title: "Коммуникабельность"
           }, {
             title: "Работа в комманде"
+          }, {
+            title: "DRY"
           }
         ]
       }, {
@@ -42,7 +44,7 @@
           }, {
             title: "Composer"
           }, {
-            title: "Объектно-ореентированное программирование"
+            title: "Объектно-ориентированное программирование"
           }, {
             title: "Smarty"
           }, {
@@ -122,7 +124,7 @@
       }, {
         name: "linux",
         src: "look-linux",
-        link: "unix",
+        link: "linux",
         page_title: "Использование Linux",
         thumbnail: "/images/ubuntu.png",
         background: "",
@@ -147,6 +149,20 @@
             title: "Github"
           }, {
             title: "Bitbucket"
+          }
+        ]
+      }, {
+        name: "contacts",
+        src: "contacts-look",
+        link: "contact-me",
+        page_title: "Мои контакты",
+        thumbnail: "/images/contacts.png",
+        background: "",
+        w: 100,
+        h: 100,
+        quality: [
+          {
+            title: "Обратная связь"
           }
         ]
       }

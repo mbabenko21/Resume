@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["views/about_me", "views/php"], function(AboutMeView, PHPView) {
+  define(["views/pages/about_me", "views/pages/php", "views/pages/node_js", "views/pages/database", "views/pages/javascript", "views/pages/linux", "views/pages/git", "views/pages/contacts"], function(AboutMeView, PHPView, NodeJSView, DatabaseView, JavascriptView, LinuxView, GitView, ContactsView) {
     var ResumeController, _ref;
     return ResumeController = (function(_super) {
       __extends(ResumeController, _super);
@@ -13,23 +13,60 @@
         return _ref;
       }
 
+      ResumeController.prototype.views = {};
+
       ResumeController.prototype.routes = {
         "!/about-me": "aboutMe",
-        "!/php": "php"
+        "!/php": "php",
+        "!/node.js": "nodeJS",
+        "!/database": "database",
+        "!/javascript": "javascript",
+        "!/linux": "linux",
+        "!/git": "git",
+        "!/contact-me": "contacts"
       };
 
-      ResumeController.prototype.initialize = function() {};
+      ResumeController.prototype.initialize = function() {
+        this.views.about_me = new AboutMeView();
+        this.views.php = new PHPView();
+        this.views.node_js = new NodeJSView();
+        this.views.database = new DatabaseView();
+        this.views.javascript = new JavascriptView();
+        this.views.linux = new LinuxView();
+        this.views.git = new GitView();
+        return this.views.contacts = new ContactsView();
+      };
 
       ResumeController.prototype.aboutMe = function() {
-        var view;
-        view = new AboutMeView();
-        return view.render();
+        return this.views.about_me.render();
       };
 
       ResumeController.prototype.php = function() {
-        var view;
-        view = new PHPView();
-        return view.render();
+        return this.views.php.render();
+      };
+
+      ResumeController.prototype.nodeJS = function() {
+        return this.views.node_js.render();
+      };
+
+      ResumeController.prototype.database = function() {
+        return this.views.database.render();
+      };
+
+      ResumeController.prototype.javascript = function() {
+        return this.views.javascript.render();
+      };
+
+      ResumeController.prototype.linux = function() {
+        return this.views.linux.render();
+      };
+
+      ResumeController.prototype.git = function() {
+        return this.views.git.render();
+      };
+
+      ResumeController.prototype.contacts = function() {
+        return this.views.contacts.render();
       };
 
       return ResumeController;

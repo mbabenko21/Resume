@@ -16,6 +16,7 @@ define([],
           {title: "Обучаемость"},
           {title: "Коммуникабельность"}
           {title: "Работа в комманде"}
+          {title: "DRY"}
         ]
       },
       {
@@ -31,7 +32,7 @@ define([],
           {title: "Symfony 2"},
           {title: "Doctrine"},
           {title: "Composer"},
-          {title: "Объектно-ореентированное программирование"},
+          {title: "Объектно-ориентированное программирование"},
           {title: "Smarty"},
           {title: "Модель-Представление-Контроллер"},
           {title: "Kohana"}
@@ -89,7 +90,7 @@ define([],
       {
         name: "linux",
         src: "look-linux",
-        link: "unix",
+        link: "linux",
         page_title: "Использование Linux",
         thumbnail: "/images/ubuntu.png",
         background: "",
@@ -109,6 +110,18 @@ define([],
         quality: [
           {title: "Github"},
           {title: "Bitbucket"}
+        ]
+      }
+      {
+        name: "contacts"
+        src: "contacts-look"
+        link: "contact-me"
+        page_title: "Мои контакты"
+        thumbnail: "/images/contacts.png"
+        background: ""
+        w: 100, h: 100
+        quality: [
+          {title: "Обратная связь"}
         ]
       }
         #{name: "html", src: "html",  thumbnail: "/images/page_html.png", w: 128, h:128},

@@ -19,8 +19,28 @@
 
       PageContainer.prototype.className = "look";
 
-      PageContainer.prototype.render = function() {
+      PageContainer.prototype.initialize = function() {
+        this.model = new PageModel;
+        return this.$el.find("#page_content").val('');
+      };
+
+      PageContainer.prototype.setTpl = function(t) {
+        var tpl;
+        tpl = _.template(t);
+        return this.model.set({
+          html: tpl()
+        });
+      };
+
+      PageContainer.prototype.renderPage = function() {
         return this.$el.html(this.template(this.model.toJSON()));
+      };
+
+      PageContainer.prototype.render = function() {
+        this.model.set({
+          html: this.page()
+        });
+        return this.renderPage();
       };
 
       return PageContainer;

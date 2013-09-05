@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['models/page', 'text!templates/page_content.html', 'mdown!pages/php.md', 'views/page_container'], function(PageModel, template, php, PageContainer) {
+  define(['text!templates/page_content.html', 'mdown!pages/php.md', 'views/page_container'], function(template, php, PageContainer) {
     var PHPView, _ref;
     return PHPView = (function(_super) {
       __extends(PHPView, _super);
@@ -13,31 +13,13 @@
         return _ref;
       }
 
-      PHPView.prototype.el = ".page-container";
-
-      PHPView.prototype.tagName = "div";
-
-      PHPView.prototype.className = "look";
-
       PHPView.prototype.template = _.template(template);
 
-      PHPView.prototype.initialize = function() {
-        this.model = new PageModel;
-        return this.$el.find("#page_content").val('');
-      };
-
-      PHPView.prototype.render = function() {
-        var tpl;
-        tpl = _.template(php);
-        this.model.set({
-          html: tpl()
-        });
-        return this.$el.html(this.template(this.model.toJSON()));
-      };
+      PHPView.prototype.page = _.template(php);
 
       return PHPView;
 
-    })(Backbone.View);
+    })(PageContainer);
   });
 
 }).call(this);
