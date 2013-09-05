@@ -1,8 +1,16 @@
-Я специализирую себя, как PHP-разработчик. **PHP** - это язык, с которого я начинал свой путь в WEB-разработке.
-Стаж работы с этим языком составляеет 5, или более лет (не помню точно).
+Я позиционирую себя, как PHP-разработчик. **PHP** - это язык, с которого я начинал свой путь в WEB-разработке.
+Стаж работы с этим языком составляеет более 5 лет.
 
-Хорошо знаю и применяю [ООП][ооп], знаю принципы [MVC][mvc].
-Знаю принципы работы современных фреймворков, таких, как, например,
+Применяю на практике [ООП][ооп] и [Паттерны проектирования][ПП]:
+
+* [MVC][mvc]
+* [Singleton][singleton]
+* [Абстрактная фабрика][фабрика]
+* [Фасад][фасад]
+* [Инверсия управления][ioc]
+* [Внедрение зависимостей][di]
+
+Знаю современные фреймворки, такие, как, например,
 
 * [Kohana][koh-fw]
 * [CodeIgniter][cod-fw]
@@ -37,3 +45,9 @@
 [olyrics]: <http://olyrics.com>
 [phpexcel]: <https://github.com/PHPOffice/PHPExcel> "PHP Excel"
 [britanium]: <http://britanium.com>
+[ПП]: <http://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F> "Шаблоны проектирования"
+[singleton]: <http://ru.wikipedia.org/wiki/%D0%9E%D0%B4%D0%B8%D0%BD%D0%BE%D1%87%D0%BA%D0%B0_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)> "Singleton"
+[фабрика]: <http://ru.wikipedia.org/wiki/%D0%90%D0%B1%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%BD%D0%B0%D1%8F_%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B0_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)> "Абстрактная фабрика"
+[ioc]: <http://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F> "Инверсия управления"
+[фасад]: <http://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D1%81%D0%B0%D0%B4_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)> "Фасад"
+[di]: <http://ru.wikipedia.org/wiki/%D0%92%D0%BD%D0%B5%D0%B4%D1%80%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8> "Внедрение зависимости"
