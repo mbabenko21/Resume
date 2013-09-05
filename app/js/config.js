@@ -10,8 +10,8 @@
         page_title: "Обо мне",
         thumbnail: "/images/man.png",
         background: "",
-        w: 128,
-        h: 128,
+        w: 100,
+        h: 100,
         quality: [
           {
             title: "Усидчивость"
@@ -34,8 +34,8 @@
         page_title: "Мои PHP-навыки",
         thumbnail: "/images/php.png",
         background: "",
-        w: 128,
-        h: 128,
+        w: 100,
+        h: 100,
         quality: [
           {
             title: "Symfony 2"
@@ -68,8 +68,8 @@
         page_title: "Знания баз данных",
         thumbnail: "/images/database.png",
         background: "",
-        w: 128,
-        h: 128,
+        w: 100,
+        h: 100,
         quality: [
           {
             title: "Mysql"
@@ -84,8 +84,8 @@
         page_title: "Изучение Node.JS",
         thumbnail: "/images/node.png",
         background: "",
-        w: 128,
-        h: 128,
+        w: 100,
+        h: 100,
         quality: [
           {
             title: "ExpressJS"
