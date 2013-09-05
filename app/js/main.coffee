@@ -19,4 +19,5 @@ require(["resume"],
     $('body').find(".skill-container").first().find('.skill').click()
     $('body').find(".skill-container").first().find('img').addClass('opacity-100')
     hljs.initHighlighting()
+    $('#page-container').find('a').attr("target", "_blank")
 )

@@ -25,7 +25,8 @@
     window.BabenkoResume = new BabenkoResume();
     $('body').find(".skill-container").first().find('.skill').click();
     $('body').find(".skill-container").first().find('img').addClass('opacity-100');
-    return hljs.initHighlighting();
+    hljs.initHighlighting();
+    return $('#page-container').find('a').attr("target", "_blank");
   });
 
 }).call(this);
