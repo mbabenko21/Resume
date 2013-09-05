@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["views/pages/about_me", "views/pages/php", "views/pages/node_js", "views/pages/database", "views/pages/javascript", "views/pages/linux", "views/pages/git", "views/pages/contacts"], function(AboutMeView, PHPView, NodeJSView, DatabaseView, JavascriptView, LinuxView, GitView, ContactsView) {
+  define(["views/pages/about_me", "views/pages/php", "views/pages/node_js", "views/pages/database", "views/pages/javascript", "views/pages/linux", "views/pages/git", "views/pages/contacts", "views/pages/portfolio"], function(AboutMeView, PHPView, NodeJSView, DatabaseView, JavascriptView, LinuxView, GitView, ContactsView, PortfolioView) {
     var ResumeController, _ref;
     return ResumeController = (function(_super) {
       __extends(ResumeController, _super);
@@ -23,7 +23,8 @@
         "!/javascript": "javascript",
         "!/linux": "linux",
         "!/git": "git",
-        "!/contact-me": "contacts"
+        "!/contact-me": "contacts",
+        "!/portfolio": "portfolio"
       };
 
       ResumeController.prototype.initialize = function() {
@@ -34,7 +35,8 @@
         this.views.javascript = new JavascriptView();
         this.views.linux = new LinuxView();
         this.views.git = new GitView();
-        return this.views.contacts = new ContactsView();
+        this.views.contacts = new ContactsView();
+        return this.views.portfolio = new PortfolioView();
       };
 
       ResumeController.prototype.aboutMe = function() {
@@ -67,6 +69,10 @@
 
       ResumeController.prototype.contacts = function() {
         return this.views.contacts.render();
+      };
+
+      ResumeController.prototype.portfolio = function() {
+        return this.views.portfolio.render();
       };
 
       return ResumeController;
