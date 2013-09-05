@@ -11,6 +11,8 @@
 Я довольно хорошо знаком с [CoffeeScript][cs].
 
 Все Javascript-файлы этого резюме были написаны с помощью **Coffee Script**
+- - -
+Я не собираюсь останавливаться на достигнутом, и, в дальнейшем, планирую развивать свои навыки в **javascript**
 
 [backbone]: <http://backbonejs.org> "Backbone Javascript Library"
 [requirejs]: <http://requirejs.org/> "Require JS"
