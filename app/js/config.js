@@ -101,6 +101,8 @@
             title: "Mongoose"
           }, {
             title: "Jade"
+          }, {
+            title: "Создание REST API"
           }
         ]
       }, {

@@ -71,6 +71,7 @@ define([],
           {title: "Socket.IO"},
           {title: "Mongoose"},
           {title: "Jade"}
+          {title: "Создание REST API"}
         ]
       }
       {
