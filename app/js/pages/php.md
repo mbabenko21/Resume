@@ -16,6 +16,8 @@
 
 Использовал ее для генерации контента для сайта [http://olyrics.com][olyrics]
 
+Знаком с библиотекой [PHPExcel][phpexcel], использовал ее для генерации контента в проекте [Britanium][britanium]
+
 Есть опыт написания консольных скриптов (парсеры, оболочки для CLI-программ)
 - - -
 Несомненно, это не все навыки PHP, которыми я владею.
@@ -33,3 +35,5 @@
 [ado-php]: <http://adodb.sourceforge.net/> "Ado-DB PHP"
 [shd]: <http://simplehtmldom.sourceforge.net/manual.htm> "Simple HTML Dom"
 [olyrics]: <http://olyrics.com>
+[phpexcel]: <https://github.com/PHPOffice/PHPExcel> "PHP Excel"
+[britanium]: <http://britanium.com>

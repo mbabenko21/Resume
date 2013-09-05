@@ -63,6 +63,8 @@
             title: "Шаблоны проектирования"
           }, {
             title: "SimpleHTMLDom"
+          }, {
+            title: "PHPExcel"
           }
         ]
       }, {

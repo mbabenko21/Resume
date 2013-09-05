@@ -42,6 +42,7 @@ define([],
           {title: "Doctrine Mongoose-ODM"}
           {title: "Шаблоны проектирования"}
           {title: "SimpleHTMLDom"}
+          {title: "PHPExcel"}
         ]
       },
       {
