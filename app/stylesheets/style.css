@@ -79,6 +79,7 @@ hr {
     text-align: left;
 }
 
+
 .opacity-70 {
     opacity: 0.6;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60); /* IE 5.5+*/
@@ -117,4 +118,14 @@ hr {
 .look-page ul li {
     list-style: none;
 }
+
+.i_me {
+    position: absolute;
+    background-image: url("/images/man.png");
+}
+
+.i_php {
+
+}
+
 

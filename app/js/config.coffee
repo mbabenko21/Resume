@@ -7,7 +7,8 @@ define([],
         link: "about-me",
         page_title: "Обо мне",
         thumbnail: "/images/man.png",
-        background: "",
+        class: "i_me"
+        background: "#333",
         w: 100,
         h: 100,
         quality: [
@@ -25,6 +26,7 @@ define([],
         link: "php",
         page_title: "Мои PHP-навыки",
         thumbnail: "/images/php.png",
+        class: "i_php"
         background: "",
         w: 100,
         h: 100,
@@ -48,6 +50,7 @@ define([],
         link: "database",
         page_title: "Знания баз данных",
         thumbnail: "/images/database.png",
+        class: "i_db"
         background: "",
         w: 100, h: 100,
         quality: [
@@ -61,6 +64,7 @@ define([],
         link: "node.js",
         page_title: "Изучение Node.JS",
         thumbnail: "/images/node.png",
+        class: "i_bg"
         background: "",
         w: 100, h: 100,
         quality: [
@@ -77,6 +81,7 @@ define([],
         link: "javascript",
         page_title: "Javascript. Светлое будующее",
         thumbnail: "/images/javascript.png",
+        class: "i_js"
         background: "",
         w: 100, h: 100,
         quality: [
@@ -92,6 +97,7 @@ define([],
         link: "linux",
         page_title: "Использование Linux",
         thumbnail: "/images/ubuntu.png",
+        class: "i_linux"
         background: "",
         w: 100, h: 100,
         quality: [
@@ -103,6 +109,8 @@ define([],
         src: "portfolio-look"
         link: "portfolio"
         page_title: "Мое портфолио"
+        thumbnail: "/images/papka.png",
+        class: "i_portfolio"
         background: ""
         w: 100, h: 100
         quality: [
@@ -118,7 +126,8 @@ define([],
         src: "look-git",
         link: "git",
         page_title: "Использование системы контролля версий",
-        thumbnail: "/images/git.png",
+        thumbnail: "/images/cvs.png",
+        class: "i_git"
         background: "",
         w: 100, h: 100,
         quality: [
@@ -132,6 +141,7 @@ define([],
         link: "contact-me"
         page_title: "Мои контакты"
         thumbnail: "/images/contacts.png"
+        class: "i_contact"
         background: ""
         w: 100, h: 100
         quality: [

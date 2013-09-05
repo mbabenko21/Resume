@@ -21,6 +21,8 @@ define([
       template: _.template template
       events:
         "click": "overSkill"
+        "mouseover": "highLightShow"
+        "mouseout": "highLightHide"
       initialize: () ->
         #console.log @model.toJSON().quality
         @collection = new QualityCollection(@model.toJSON().quality)
@@ -38,9 +40,10 @@ define([
           (item) -> that.renderQualities(item)
           @
         )
-        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100')
-        $("body").find(".skill.opacity-70").removeClass('opacity-70')
-        $(event.target).removeClass('opacity-70').addClass('opacity-100')
+        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active")
+        $("body").find(".skill.opacity-70").removeClass('opacity-70').removeClass("active")
+        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active")
+
         @router.navigate "!/"+@model.toJSON().link, {trigger: true}
         @changePageTitle(@model)
       renderQualities: (quality) ->
@@ -50,4 +53,31 @@ define([
       changePageTitle: (model) ->
         @pageTitle.model = model
         @pageTitle.render()
+
+      highLightShow: () ->
+        that = @
+        if(@isActive() is false)
+          @clearSkill(@$el).addClass("opacity-100")
+
+      highLightHide: () ->
+        if(@isActive() is false)
+          @deactive(@$el)
+        #@$el.css("background-color", "")
+      clearAllSkills: () ->
+        that = @
+        list = $('body').find('img')
+
+      clearSkill: (el) ->
+        img = el.find("img").first()
+        img.removeClass("opacity-100")
+          .removeClass("opacity-70")
+          .removeClass("active")
+        return img
+
+      isActive: () ->
+        /active/i.test @$el.find("img").first().attr('class')
+      activate: (el) ->
+        @clearSkill(el).addClass("opacity-100").addClass("active")
+      deactive: (el) ->
+        @clearSkill(el).addClass("opacity-70")
 )

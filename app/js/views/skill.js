@@ -22,7 +22,9 @@
       SkillView.prototype.template = _.template(template);
 
       SkillView.prototype.events = {
-        "click": "overSkill"
+        "click": "overSkill",
+        "mouseover": "highLightShow",
+        "mouseout": "highLightHide"
       };
 
       SkillView.prototype.initialize = function() {
@@ -45,9 +47,9 @@
         _.each(this.collection.models, function(item) {
           return that.renderQualities(item);
         }, this);
-        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100');
-        $("body").find(".skill.opacity-70").removeClass('opacity-70');
-        $(event.target).removeClass('opacity-70').addClass('opacity-100');
+        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active");
+        $("body").find(".skill.opacity-70").removeClass('opacity-70').removeClass("active");
+        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active");
         this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });
@@ -66,6 +68,45 @@
       SkillView.prototype.changePageTitle = function(model) {
         this.pageTitle.model = model;
         return this.pageTitle.render();
+      };
+
+      SkillView.prototype.highLightShow = function() {
+        var that;
+        that = this;
+        if (this.isActive() === false) {
+          return this.clearSkill(this.$el).addClass("opacity-100");
+        }
+      };
+
+      SkillView.prototype.highLightHide = function() {
+        if (this.isActive() === false) {
+          return this.deactive(this.$el);
+        }
+      };
+
+      SkillView.prototype.clearAllSkills = function() {
+        var list, that;
+        that = this;
+        return list = $('body').find('img');
+      };
+
+      SkillView.prototype.clearSkill = function(el) {
+        var img;
+        img = el.find("img").first();
+        img.removeClass("opacity-100").removeClass("opacity-70").removeClass("active");
+        return img;
+      };
+
+      SkillView.prototype.isActive = function() {
+        return /active/i.test(this.$el.find("img").first().attr('class'));
+      };
+
+      SkillView.prototype.activate = function(el) {
+        return this.clearSkill(el).addClass("opacity-100").addClass("active");
+      };
+
+      SkillView.prototype.deactive = function(el) {
+        return this.clearSkill(el).addClass("opacity-70");
       };
 
       return SkillView;
