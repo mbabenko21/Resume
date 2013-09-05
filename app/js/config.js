@@ -44,11 +44,7 @@
           }, {
             title: "Composer"
           }, {
-            title: "Объектно-ориентированное программирование"
-          }, {
             title: "Smarty"
-          }, {
-            title: "Модель-Представление-Контроллер"
           }, {
             title: "Kohana"
           }, {
@@ -59,8 +55,6 @@
             title: "Zend Framework"
           }, {
             title: "Doctrine Mongoose-ODM"
-          }, {
-            title: "Шаблоны проектирования"
           }, {
             title: "SimpleHTMLDom"
           }, {
@@ -102,7 +96,7 @@
           }, {
             title: "Jade"
           }, {
-            title: "Создание REST API"
+            title: "REST API"
           }
         ]
       }, {

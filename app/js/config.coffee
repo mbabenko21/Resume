@@ -32,15 +32,12 @@ define([],
           {title: "Symfony 2"},
           {title: "Doctrine"},
           {title: "Composer"},
-          {title: "Объектно-ориентированное программирование"},
           {title: "Smarty"},
-          {title: "Модель-Представление-Контроллер"},
           {title: "Kohana"}
           {title: "Laravel"}
           {title: "Code Ingniter"}
           {title: "Zend Framework"}
           {title: "Doctrine Mongoose-ODM"}
-          {title: "Шаблоны проектирования"}
           {title: "SimpleHTMLDom"}
           {title: "PHPExcel"}
         ]
@@ -71,7 +68,7 @@ define([],
           {title: "Socket.IO"},
           {title: "Mongoose"},
           {title: "Jade"}
-          {title: "Создание REST API"}
+          {title: "REST API"}
         ]
       }
       {
