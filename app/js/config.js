@@ -11,8 +11,6 @@
         thumbnail: "/images/man.png",
         "class": "i_me",
         background: "#333",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "Усидчивость"
@@ -36,8 +34,6 @@
         thumbnail: "/images/php.png",
         "class": "i_php",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "Symfony 2"
@@ -71,8 +67,6 @@
         thumbnail: "/images/database.png",
         "class": "i_db",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "Mysql"
@@ -88,8 +82,6 @@
         thumbnail: "/images/node.png",
         "class": "i_bg",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "ExpressJS"
@@ -111,8 +103,6 @@
         thumbnail: "/images/javascript.png",
         "class": "i_js",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "JQuery"
@@ -132,8 +122,6 @@
         thumbnail: "/images/ubuntu.png",
         "class": "i_linux",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "unix-console"
@@ -147,8 +135,6 @@
         thumbnail: "/images/papka.png",
         "class": "i_portfolio",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "Сайт-визитка"
@@ -170,8 +156,6 @@
         thumbnail: "/images/cvs.png",
         "class": "i_git",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "Github"
@@ -187,8 +171,6 @@
         thumbnail: "/images/contacts.png",
         "class": "i_contact",
         background: "",
-        w: 100,
-        h: 100,
         quality: [
           {
             title: "Обратная связь"

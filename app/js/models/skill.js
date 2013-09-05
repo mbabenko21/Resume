@@ -14,7 +14,9 @@
       }
 
       SkillModel.prototype.defaults = {
-        thumbnail: "/images/unknown.png"
+        thumbnail: "/images/unknown.png",
+        w: 96,
+        h: 96
       };
 
       return SkillModel;
