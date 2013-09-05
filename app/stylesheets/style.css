@@ -68,7 +68,7 @@ hr {
     display: inline;
 }
 
-.skill, .quality {
+.skill{
     cursor: pointer;
 }
 
