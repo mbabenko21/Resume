@@ -40,6 +40,7 @@ define([
           (item) -> that.renderQualities(item)
           @
         )
+
         $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active").fadeTo(400, 0.5)
         $("body").find(".skill.opacity-70").removeClass('opacity-70').removeClass("active")
         $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active").fadeTo(0, 1)
