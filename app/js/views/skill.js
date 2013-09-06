@@ -47,9 +47,9 @@
         _.each(this.collection.models, function(item) {
           return that.renderQualities(item);
         }, this);
-        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active");
+        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active").fadeTo(400, 0.5);
         $("body").find(".skill.opacity-70").removeClass('opacity-70').removeClass("active");
-        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active");
+        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active").fadeTo(0, 1);
         this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });
@@ -74,13 +74,13 @@
         var that;
         that = this;
         if (this.isActive() === false) {
-          return this.clearSkill(this.$el).addClass("opacity-100");
+          return this.clearSkill(this.$el).fadeTo(400, 1);
         }
       };
 
       SkillView.prototype.highLightHide = function() {
         if (this.isActive() === false) {
-          return this.deactive(this.$el);
+          return this.clearSkill(this.$el).fadeTo(400, 0.5);
         }
       };
 
@@ -93,7 +93,7 @@
       SkillView.prototype.clearSkill = function(el) {
         var img;
         img = el.find("img").first();
-        img.removeClass("opacity-100").removeClass("opacity-70").removeClass("active");
+        img.removeAttr("class");
         return img;
       };
 

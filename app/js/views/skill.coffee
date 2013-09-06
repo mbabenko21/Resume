@@ -40,9 +40,9 @@ define([
           (item) -> that.renderQualities(item)
           @
         )
-        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active")
+        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active").fadeTo(400, 0.5)
         $("body").find(".skill.opacity-70").removeClass('opacity-70').removeClass("active")
-        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active")
+        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active").fadeTo(0, 1)
 
         @router.navigate "!/"+@model.toJSON().link, {trigger: true}
         @changePageTitle(@model)
@@ -57,11 +57,11 @@ define([
       highLightShow: () ->
         that = @
         if(@isActive() is false)
-          @clearSkill(@$el).addClass("opacity-100")
+          @clearSkill(@$el).fadeTo(400, 1)
 
       highLightHide: () ->
         if(@isActive() is false)
-          @deactive(@$el)
+          @clearSkill(@$el).fadeTo(400, 0.5)
         #@$el.css("background-color", "")
       clearAllSkills: () ->
         that = @
@@ -69,9 +69,7 @@ define([
 
       clearSkill: (el) ->
         img = el.find("img").first()
-        img.removeClass("opacity-100")
-          .removeClass("opacity-70")
-          .removeClass("active")
+        img.removeAttr "class"
         return img
 
       isActive: () ->
