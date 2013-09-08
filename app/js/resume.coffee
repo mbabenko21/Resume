@@ -13,8 +13,9 @@ define(
         @skills = config
         @locales = locales
         @controller = new ResumeController()
-        resume = new ResumeView(@)
-        resume.render()
+
+        @resume = new ResumeView(@)
+        @resume.render()
 
         locale = new LocaleView(@)
         locale.render()

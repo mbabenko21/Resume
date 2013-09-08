@@ -6,12 +6,12 @@
       BabenkoResume.prototype.skills = {};
 
       function BabenkoResume() {
-        var locale, resume;
+        var locale;
         this.skills = config;
         this.locales = locales;
         this.controller = new ResumeController();
-        resume = new ResumeView(this);
-        resume.render();
+        this.resume = new ResumeView(this);
+        this.resume.render();
         locale = new LocaleView(this);
         locale.render();
         Backbone.history.start();
