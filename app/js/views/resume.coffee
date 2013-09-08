@@ -7,7 +7,7 @@ define([
     el: $(".resume-container")
     initialize: (app) ->
       @resume = app
-      @collection = new SkillsCollection(app.skills)
+      @collection = new SkillsCollection app.skills
       @render
     render: () ->
       that = @

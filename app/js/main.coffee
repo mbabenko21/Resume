@@ -17,7 +17,7 @@ require(["resume"],
   (BabenkoResume) ->
     window.BabenkoResume = new BabenkoResume()
     $('body').find(".skill-container").first().find('.skill').click();
-    $('body').find("#lang-container").first().find('.lang').first().find("span").click();
+    $('body').find("#locale-container").first().find('.locale').first().find("span").click();
     $('body').find(".skill-container").first().find('.skill').removeClass("opacity-100").removeClass("opacity-70")
     $('body').find(".skill-container").first().find('img').addClass('opacity-100').addClass("active").fadeTo(0, 1)
     hljs.initHighlighting()

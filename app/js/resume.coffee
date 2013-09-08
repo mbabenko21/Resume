@@ -1,23 +1,23 @@
 define(
   [
     "config"
+    "locales"
     "views/resume"
-    "views/lang"
+    "views/locale"
     "controller"
-    "langs"
   ],
-  (config, ResumeView, LangView, ResumeController, langs) ->
+  (config, locales, ResumeView, LocaleView, ResumeController) ->
     class BabenkoResume
       skills: {}
       constructor: () ->
         @skills = config
-        @langs = langs
+        @locales = locales
         @controller = new ResumeController()
         resume = new ResumeView(@)
         resume.render()
 
-        lang = new LangView(@)
-        lang.render()
+        locale = new LocaleView(@)
+        locale.render()
 
         Backbone.history.start()
 

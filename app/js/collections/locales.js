@@ -3,27 +3,21 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define([], function() {
-    var LangModel, _ref;
-    return LangModel = (function(_super) {
-      __extends(LangModel, _super);
+  define(['models/locale'], function(LocaleModel) {
+    var LocaleCollection, _ref;
+    return LocaleCollection = (function(_super) {
+      __extends(LocaleCollection, _super);
 
-      function LangModel() {
-        _ref = LangModel.__super__.constructor.apply(this, arguments);
+      function LocaleCollection() {
+        _ref = LocaleCollection.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      LangModel.prototype.defaults = {
-        locale: "ru"
-      };
+      LocaleCollection.prototype.model = LocaleModel;
 
-      return LangModel;
+      return LocaleCollection;
 
-    })(Backbone.Model);
+    })(Backbone.Collection);
   });
 
 }).call(this);
-
-/*
-//@ sourceMappingURL=lang.map
-*/

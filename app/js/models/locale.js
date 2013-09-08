@@ -3,25 +3,24 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['models/lang'], function(LangModel) {
-    var LangsCollection, _ref;
-    return LangsCollection = (function(_super) {
-      __extends(LangsCollection, _super);
+  define([], function() {
+    var LocaleModel, _ref;
+    return LocaleModel = (function(_super) {
+      __extends(LocaleModel, _super);
 
-      function LangsCollection() {
-        _ref = LangsCollection.__super__.constructor.apply(this, arguments);
+      function LocaleModel() {
+        _ref = LocaleModel.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      LangsCollection.prototype.model = LangModel;
+      LocaleModel.prototype.defaults = {
+        locale: "RU",
+        link: "ru"
+      };
 
-      return LangsCollection;
+      return LocaleModel;
 
-    })(Backbone.Collection);
+    })(Backbone.Model);
   });
 
 }).call(this);
-
-/*
-//@ sourceMappingURL=langs.map
-*/
