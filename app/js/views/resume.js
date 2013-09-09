@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["collections/skills", "views/skill"], function(SkillsCollection, SkillView) {
+  define(["collections/skills", "views/skill", "views/page", "controller"], function(SkillsCollection, SkillView, PageTitleView, ResumeController) {
     var ResumeView, _ref;
     return ResumeView = (function(_super) {
       __extends(ResumeView, _super);
@@ -15,31 +15,62 @@
 
       ResumeView.prototype.el = $(".resume-container");
 
-      ResumeView.prototype.initialize = function(app) {
-        this.resume = app;
-        this.collection = new SkillsCollection(app.skills);
+      ResumeView.prototype.initialize = function(options) {
+        this.app = options.app, this.locale = options.locale;
+        this.collection = new SkillsCollection(this.app.skills);
+        this.router = new ResumeController();
         return this.render;
       };
 
       ResumeView.prototype.render = function() {
-        var that;
-        that = this;
-        _.each(this.collection.models, function(item) {
-          return that.renderSkill(item);
-        }, this);
-        this.resume.controller.navigate("!/" + this.collection.at(0).toJSON().link);
-        this.$el.find(".skill").first().click();
+        var model;
+        this.$el.html("");
+        this.renderAllSkills();
+        this.changePageTitle();
+        model = this.collection.findWhere({
+          active: true
+        });
+        window.location.hash = "!/" + model.toJSON().link;
         return this;
       };
 
-      ResumeView.prototype.renderSkill = function(skill) {
+      ResumeView.prototype.renderAllSkills = function() {
+        var that;
+        that = this;
+        return _.each(this.collection.models, function(item) {
+          return that.renderOneSkill(item);
+        }, this);
+      };
+
+      ResumeView.prototype.renderOneSkill = function(skill) {
         var skillView, that;
         that = this;
         skillView = new SkillView({
           model: skill,
-          router: that.resume.controller
+          resume: that
         });
-        return this.$el.append(skillView.render().el);
+        this.$el.append(skillView.render().el);
+        skillView.hideSkill();
+        if (skill.toJSON().active === true) {
+          return skillView.showSkill();
+        }
+      };
+
+      ResumeView.prototype.activateSkill = function(model) {
+        var el;
+        el = $("#" + model.get("id"));
+        return el.find("img").addClass("active").fadeTo(0, 1);
+      };
+
+      ResumeView.prototype.changePageTitle = function() {
+        var model, pt;
+        model = this.collection.findWhere({
+          active: true
+        });
+        pt = new PageTitleView({
+          model: model
+        });
+        return pt.render();
       };
 
       return ResumeView;

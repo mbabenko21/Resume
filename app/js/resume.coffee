@@ -12,13 +12,12 @@ define(
       constructor: () ->
         @skills = config
         @locales = locales
-        @controller = new ResumeController()
+        @controller = new ResumeController(@)
+        window.Locale = new LocaleView(@)
+        Locale.render()
 
-        @resume = new ResumeView(@)
+        @resume = new ResumeView app: @, locale: Locale
         @resume.render()
-
-        locale = new LocaleView(@)
-        locale.render()
 
         Backbone.history.start()
 

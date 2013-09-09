@@ -10,17 +10,31 @@ define [
       "click": "change"
 
     initialize: (app) ->
+      @app = app
       @collection = new LocaleCollection app.locales
       @render
 
     render: () ->
       that = @
       _.each @collection.models, (locale) ->
-        that.$el.append that.template locale.toJSON()
+        that.$el.append that.template locale
 
     change: (event) ->
+      id = $(event.target).attr "id"
       @clear()
+      @setLocale id
       $(event.target).addClass("circle").addClass("text-danger")
+      @app.resume.render()
 
     clear: () ->
-      @$el.find(".circle").removeClass("circle").removeClass("text-danger");
+      locale = @collection.findWhere({active: true})
+      if locale isnt undefined
+        locale.set({active: false})
+      el = @$el.find "#"+locale.toJSON().link
+      el.removeClass("circle").removeClass("text-danger");
+
+    setLocale: (id) ->
+      model = @collection.findWhere link: id
+      if model isnt undefined
+        model.set({active: true})
+      @locale = model

@@ -1,6 +1,6 @@
 define [
   'text!templates/page_content.html'
-  'mdown!pages/git.md'
+  'mdown!pages/vcs.md'
   'views/page_container'
 ], (template, git, PageContainer) ->
   class GitView extends PageContainer

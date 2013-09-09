@@ -22,6 +22,7 @@
       };
 
       LocaleView.prototype.initialize = function(app) {
+        this.app = app;
         this.collection = new LocaleCollection(app.locales);
         return this.render;
       };
@@ -30,17 +31,44 @@
         var that;
         that = this;
         return _.each(this.collection.models, function(locale) {
-          return that.$el.append(that.template(locale.toJSON()));
+          return that.$el.append(that.template(locale));
         });
       };
 
       LocaleView.prototype.change = function(event) {
+        var id;
+        id = $(event.target).attr("id");
         this.clear();
-        return $(event.target).addClass("circle").addClass("text-danger");
+        this.setLocale(id);
+        $(event.target).addClass("circle").addClass("text-danger");
+        return this.app.resume.render();
       };
 
       LocaleView.prototype.clear = function() {
-        return this.$el.find(".circle").removeClass("circle").removeClass("text-danger");
+        var el, locale;
+        locale = this.collection.findWhere({
+          active: true
+        });
+        if (locale !== void 0) {
+          locale.set({
+            active: false
+          });
+        }
+        el = this.$el.find("#" + locale.toJSON().link);
+        return el.removeClass("circle").removeClass("text-danger");
+      };
+
+      LocaleView.prototype.setLocale = function(id) {
+        var model;
+        model = this.collection.findWhere({
+          link: id
+        });
+        if (model !== void 0) {
+          model.set({
+            active: true
+          });
+        }
+        return this.locale = model;
       };
 
       return LocaleView;

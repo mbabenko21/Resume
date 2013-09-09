@@ -22,6 +22,8 @@ define [
   class ResumeController extends Backbone.Router
     views: {}
     routes:
+      "": "aboutMe"
+      "!/": "aboutMe"
       "!/about-me": "aboutMe"
       "!/php": "php"
       "!/node.js": "nodeJS"
@@ -31,7 +33,8 @@ define [
       "!/git": "git"
       "!/contact-me": "contacts"
       "!/portfolio": "portfolio"
-    initialize: () ->
+    initialize: (app) ->
+      @app = app
       @views.about_me = new AboutMeView()
       @views.php = new PHPView()
       @views.node_js = new NodeJSView()
@@ -42,7 +45,7 @@ define [
       @views.contacts = new ContactsView()
       @views.portfolio = new PortfolioView()
     aboutMe: () ->
-       @views.about_me.render()
+      @views.about_me.render()
     php: () ->
       @views.php.render()
     nodeJS: () ->

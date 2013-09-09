@@ -1,5 +1,5 @@
 define [], () ->
   locales = [
-    {locale: "RU", link: "ru"}
+    {locale: "RU", link: "ru", active: true}
     {locale: "EN", link: "en"}
   ]

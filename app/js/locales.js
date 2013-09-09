@@ -5,7 +5,8 @@
     return locales = [
       {
         locale: "RU",
-        link: "ru"
+        link: "ru",
+        active: true
       }, {
         locale: "EN",
         link: "en"

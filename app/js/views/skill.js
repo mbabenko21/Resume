@@ -22,12 +22,13 @@
       SkillView.prototype.template = _.template(template);
 
       SkillView.prototype.events = {
-        "click": "overSkill",
+        "click": "changeSkill",
         "mouseover": "highLightShow",
         "mouseout": "highLightHide"
       };
 
-      SkillView.prototype.initialize = function() {
+      SkillView.prototype.initialize = function(options) {
+        this.resume = options.resume;
         this.collection = new QualityCollection(this.model.toJSON().quality);
         return this.router = new ResumeController();
       };
@@ -37,23 +38,12 @@
         return this;
       };
 
-      SkillView.prototype.overSkill = function(event) {
-        var that;
-        this.pageTitle = new PageTitleView({
-          model: this.model
-        });
-        this.qualityContainer.find(".quality").remove();
-        that = this;
-        _.each(this.collection.models, function(item) {
-          return that.renderQualities(item);
-        }, this);
-        $("body").find(".opacity-100").addClass('opacity-70').removeClass('opacity-100').removeClass("active").fadeTo(400, 0.5);
-        $("body").find(".skill.opacity-70").removeClass('opacity-70').removeClass("active");
-        $(event.target).removeClass('opacity-70').addClass('opacity-100').addClass("active").fadeTo(0, 1);
-        this.router.navigate("!/" + this.model.toJSON().link, {
+      SkillView.prototype.changeSkill = function(event) {
+        this.activate(this.model);
+        this.resume.render();
+        return this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });
-        return this.changePageTitle(this.model);
       };
 
       SkillView.prototype.renderQualities = function(quality) {
@@ -65,48 +55,79 @@
         return this.qualityContainer.show();
       };
 
-      SkillView.prototype.changePageTitle = function(model) {
-        this.pageTitle.model = model;
-        return this.pageTitle.render();
-      };
-
       SkillView.prototype.highLightShow = function() {
-        var that;
-        that = this;
-        if (this.isActive() === false) {
-          return this.clearSkill(this.$el).fadeTo(400, 1);
+        if (this.model.toJSON().active === false) {
+          return this.showSkill(400);
         }
       };
 
       SkillView.prototype.highLightHide = function() {
-        if (this.isActive() === false) {
-          return this.clearSkill(this.$el).fadeTo(400, 0.5);
+        if (this.model.toJSON().active === false) {
+          return this.hideSkill(400);
         }
       };
 
-      SkillView.prototype.clearAllSkills = function() {
-        var list, that;
-        that = this;
-        return list = $('body').find('img');
-      };
-
-      SkillView.prototype.clearSkill = function(el) {
-        var img;
-        img = el.find("img").first();
-        img.removeAttr("class");
-        return img;
+      SkillView.prototype.clearSkill = function(model) {
+        var el;
+        el = $("#" + model.get("id"));
+        el.find("img").first().removeClass("active");
+        return el;
       };
 
       SkillView.prototype.isActive = function() {
-        return /active/i.test(this.$el.find("img").first().attr('class'));
+        return /active/i.test(this.$el.attr('class'));
       };
 
-      SkillView.prototype.activate = function(el) {
-        return this.clearSkill(el).addClass("opacity-100").addClass("active");
+      SkillView.prototype.showSkill = function(time, model) {
+        var el;
+        if (time == null) {
+          time = 0;
+        }
+        if (model == null) {
+          model = this.model;
+        }
+        el = $("#" + model.get("id"));
+        return el.fadeTo(time, 1);
       };
 
-      SkillView.prototype.deactive = function(el) {
-        return this.clearSkill(el).addClass("opacity-70");
+      SkillView.prototype.hideSkill = function(time, model) {
+        var el;
+        if (time == null) {
+          time = 0;
+        }
+        if (model == null) {
+          model = this.model;
+        }
+        el = $("#" + model.get("id"));
+        return el.fadeTo(time, 0.5);
+      };
+
+      SkillView.prototype.activate = function(model) {
+        var newActive, oldActive;
+        oldActive = this.resume.collection.findWhere({
+          active: true
+        });
+        newActive = this.resume.collection.findWhere({
+          id: model.get("id")
+        });
+        oldActive.set({
+          active: false
+        });
+        newActive.set({
+          active: true
+        });
+        newActive.set({
+          "class": "active"
+        });
+        this.showSkill(0, newActive);
+        return this.deactive(oldActive);
+      };
+
+      SkillView.prototype.deactive = function(model) {
+        model.set({
+          "class": ""
+        });
+        return this.hideSkill(0, model);
       };
 
       return SkillView;

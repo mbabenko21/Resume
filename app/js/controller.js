@@ -16,6 +16,8 @@
       ResumeController.prototype.views = {};
 
       ResumeController.prototype.routes = {
+        "": "aboutMe",
+        "!/": "aboutMe",
         "!/about-me": "aboutMe",
         "!/php": "php",
         "!/node.js": "nodeJS",
@@ -27,7 +29,8 @@
         "!/portfolio": "portfolio"
       };
 
-      ResumeController.prototype.initialize = function() {
+      ResumeController.prototype.initialize = function(app) {
+        this.app = app;
         this.views.about_me = new AboutMeView();
         this.views.php = new PHPView();
         this.views.node_js = new NodeJSView();
