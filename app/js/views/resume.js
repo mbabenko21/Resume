@@ -25,6 +25,7 @@
       ResumeView.prototype.render = function() {
         var model;
         this.$el.html("");
+        this.setHeader();
         this.renderAllSkills();
         this.changePageTitle();
         model = this.collection.findWhere({
@@ -71,6 +72,16 @@
           model: model
         });
         return pt.render();
+      };
+
+      ResumeView.prototype.setHeader = function() {
+        var el;
+        el = $("#advert_text");
+        if (Locale.locale.toJSON().link === "ru") {
+          return el.find("h3").text("Резюме WEB-разработчика");
+        } else {
+          return el.find("h3").text("WEB-developer resume");
+        }
       };
 
       return ResumeView;

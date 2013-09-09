@@ -20,9 +20,11 @@ define([
     # Изменить адресс url
     render: () ->
       @$el.html ""
+      @setHeader()
       @renderAllSkills()
       @changePageTitle()
       model = @collection.findWhere active: true
+      #TODO Заглушка! Необходимо найти решение!!!
       window.location.hash = "!/"+model.toJSON().link
       return @
 
@@ -52,4 +54,11 @@ define([
       model = @collection.findWhere active: true
       pt = new PageTitleView model: model
       pt.render()
+
+    setHeader: () ->
+      el = $("#advert_text")
+      if Locale.locale.toJSON().link is "ru"
+        el.find("h3").text("Резюме WEB-разработчика")
+      else
+        el.find("h3").text("WEB-developer resume")
 )

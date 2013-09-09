@@ -44,6 +44,7 @@ define [
       @views.git = new GitView()
       @views.contacts = new ContactsView()
       @views.portfolio = new PortfolioView()
+
     aboutMe: () ->
       @views.about_me.render()
     php: () ->

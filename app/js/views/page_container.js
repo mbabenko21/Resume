@@ -19,17 +19,11 @@
 
       PageContainer.prototype.className = "look";
 
+      PageContainer.prototype.page = _.template("");
+
       PageContainer.prototype.initialize = function() {
         this.model = new PageModel;
         return this.$el.find("#page_content").val('');
-      };
-
-      PageContainer.prototype.setTpl = function(t) {
-        var tpl;
-        tpl = _.template(t);
-        return this.model.set({
-          html: tpl()
-        });
       };
 
       PageContainer.prototype.renderPage = function() {
@@ -37,11 +31,23 @@
       };
 
       PageContainer.prototype.render = function() {
-        this.model.set({
-          html: this.page()
+        return this.setPage(this.pageFile);
+      };
+
+      PageContainer.prototype.setPage = function(pageFile) {
+        var locale, returnPage, that;
+        that = this;
+        locale = Locale.locale.toJSON().link;
+        returnPage = "";
+        return require(["mdown!pages/" + locale + "/" + pageFile + ".md"], function(page) {
+          var model;
+          returnPage = _.template(page);
+          model = new PageModel({
+            html: returnPage()
+          });
+          that.$el.html(that.template(model.toJSON()));
+          return that.$el.find('a').attr('target', '_blank');
         });
-        this.renderPage();
-        return this.$el.find('a').attr('target', '_blank');
       };
 
       return PageContainer;

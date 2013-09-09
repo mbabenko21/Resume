@@ -1,8 +1,7 @@
 define [
   'text!templates/page_content.html'
-  'mdown!pages/contacts.md'
   'views/page_container'
-], (template, contacts, PageContainer) ->
+], (template, PageContainer) ->
   class ContactsView extends PageContainer
     template: _.template template
-    page: _.template contacts
+    pageFile: "contacts"

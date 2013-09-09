@@ -46,14 +46,12 @@
         });
       };
 
-      SkillView.prototype.renderQualities = function(quality) {
-        var qualityView;
-        qualityView = new QualityView({
-          model: quality
-        });
-        this.qualityContainer.append(qualityView.render().el);
-        return this.qualityContainer.show();
-      };
+      /*renderQualities: (quality) ->
+        qualityView = new QualityView model: quality
+        @qualityContainer.append qualityView.render().el
+        @qualityContainer.show()
+      */
+
 
       SkillView.prototype.highLightShow = function() {
         if (this.model.toJSON().active === false) {

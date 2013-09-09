@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['text!templates/page_content.html', 'mdown!pages/contacts.md', 'views/page_container'], function(template, contacts, PageContainer) {
+  define(['text!templates/page_content.html', 'views/page_container'], function(template, PageContainer) {
     var ContactsView, _ref;
     return ContactsView = (function(_super) {
       __extends(ContactsView, _super);
@@ -15,7 +15,7 @@
 
       ContactsView.prototype.template = _.template(template);
 
-      ContactsView.prototype.page = _.template(contacts);
+      ContactsView.prototype.pageFile = "contacts";
 
       return ContactsView;
 

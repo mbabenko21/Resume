@@ -15,8 +15,11 @@
         deps: ['lib/underscore-min'],
         exports: 'Backbone'
       },
+      'lib/markdown': {
+        exports: 'markdown'
+      },
       'resume': {
-        deps: ['lib/underscore-min', 'lib/backbone-min']
+        deps: ['lib/underscore-min', 'lib/backbone-min', 'lib/markdown']
       }
     }
   });

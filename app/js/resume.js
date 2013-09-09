@@ -9,12 +9,11 @@
         this.skills = config;
         this.locales = locales;
         this.controller = new ResumeController(this);
+        this.resume = new ResumeView({
+          app: this
+        });
         window.Locale = new LocaleView(this);
         Locale.render();
-        this.resume = new ResumeView({
-          app: this,
-          locale: Locale
-        });
         this.resume.render();
         Backbone.history.start();
       }

@@ -5,7 +5,7 @@ define([],
         id: "me",
         src: "look-me",
         link: "about-me",
-        page_title: "Обо мне",
+        page_title: {en: "About me", ru: "Обо мне"},
         thumbnail: "/images/man.png",
         background: "#333",
         active: true
@@ -22,7 +22,7 @@ define([],
         id: "php",
         src: "look-php",
         link: "php",
-        page_title: "Мои PHP-навыки",
+        page_title: {en: "My PHP skills", ru: "Мои PHP навыки"},
         thumbnail: "/images/php.png",
         background: "",
         quality: [
@@ -43,7 +43,7 @@ define([],
         id: "database",
         src: "look-database",
         link: "database",
-        page_title: "Знания баз данных",
+        page_title: {en: "Database knowledge", ru: "Знания баз данных"},
         thumbnail: "/images/database.png",
         background: "",
         quality: [
@@ -55,7 +55,7 @@ define([],
         id: "node",
         src: "look-node",
         link: "node.js",
-        page_title: "Изучение Node.JS",
+        page_title: {en: "Node.JS learning", ru: "Изучение Node.JS"},
         thumbnail: "/images/node.png",
         background: "",
         quality: [
@@ -70,7 +70,7 @@ define([],
         id: "javascript",
         src: "look-js",
         link: "javascript",
-        page_title: "Javascript",
+        page_title: {en: "Javascript", ru: "Javascript"},
         thumbnail: "/images/javascript.png",
         background: "",
         quality: [
@@ -84,7 +84,7 @@ define([],
         id: "linux",
         src: "look-linux",
         link: "linux",
-        page_title: "Использование Linux",
+        page_title: {en: "Linux usage", ru: "Использование linux"},
         thumbnail: "/images/ubuntu.png",
         background: "",
         quality: [
@@ -95,7 +95,7 @@ define([],
         id: "portfolio"
         src: "portfolio-look"
         link: "portfolio"
-        page_title: "Мое портфолио"
+        page_title: {en: "My portfolio", ru: "Мое портфолио"},
         thumbnail: "/images/papka.png",
         background: ""
         quality: [
@@ -110,7 +110,7 @@ define([],
         id: "git",
         src: "look-git",
         link: "git",
-        page_title: "Использование системы контроля версий",
+        page_title: {en: "Use system version controll", ru: "Использование системы контролля версий"},
         thumbnail: "/images/cvs.png",
         background: "",
         quality: [
@@ -122,7 +122,7 @@ define([],
         id: "contacts"
         src: "contacts-look"
         link: "contact-me"
-        page_title: "Мои контакты"
+        page_title: {en: "My contacts", ru: "Мои контакты"},
         thumbnail: "/images/contacts.png"
         background: ""
         quality: [

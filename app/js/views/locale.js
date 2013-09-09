@@ -23,24 +23,27 @@
 
       LocaleView.prototype.initialize = function(app) {
         this.app = app;
-        this.collection = new LocaleCollection(app.locales);
-        return this.render;
+        return this.collection = new LocaleCollection(app.locales);
       };
 
       LocaleView.prototype.render = function() {
         var that;
         that = this;
-        return _.each(this.collection.models, function(locale) {
+        _.each(this.collection.models, function(locale) {
           return that.$el.append(that.template(locale));
         });
+        this.select(this.collection.findWhere({
+          active: true
+        }));
+        return this;
       };
 
       LocaleView.prototype.change = function(event) {
         var id;
         id = $(event.target).attr("id");
-        this.clear();
-        this.setLocale(id);
-        $(event.target).addClass("circle").addClass("text-danger");
+        this.select(this.collection.findWhere({
+          link: id
+        }));
         return this.app.resume.render();
       };
 
@@ -56,6 +59,29 @@
         }
         el = this.$el.find("#" + locale.toJSON().link);
         return el.removeClass("circle").removeClass("text-danger");
+      };
+
+      LocaleView.prototype.select = function(model) {
+        var activeModel, el;
+        if (model == null) {
+          model = this.model;
+        }
+        this.clear();
+        this.collection.findWhere({
+          link: model.toJSON().link
+        }).set({
+          active: true
+        });
+        el = $("#" + model.toJSON().link);
+        el.addClass("circle").addClass("text-danger");
+        this.setLocale(model.toJSON().link);
+        activeModel = this.app.resume.collection.findWhere({
+          active: true
+        });
+        console.log(activeModel.toJSON().link);
+        return this.app.controller.navigate("!//" + activeModel.toJSON().link, {
+          trigger: true
+        });
       };
 
       LocaleView.prototype.setLocale = function(id) {
