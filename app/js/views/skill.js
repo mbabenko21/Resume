@@ -55,13 +55,15 @@
 
       SkillView.prototype.changeBG = function() {
         var bg;
-        if (this.model.toJSON().background !== "") {
-          bg = BackgoundView.collection.findWhere({
-            url: this.model.toJSON().background
-          });
-          return BackgoundView.changeBackground(bg);
-        } else {
-          return BackgoundView.random();
+        if (BackgoundView.model.toJSON().url !== this.model.toJSON().background) {
+          if (this.model.toJSON().background !== "") {
+            bg = BackgoundView.collection.findWhere({
+              url: this.model.toJSON().background
+            });
+            return BackgoundView.changeBackground(bg);
+          } else {
+            return BackgoundView.random();
+          }
         }
       };
 

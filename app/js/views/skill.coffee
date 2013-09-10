@@ -42,11 +42,12 @@ define([
         @router.navigate "!/"+@model.toJSON().link, trigger: true
 
       changeBG: () ->
-        if @model.toJSON().background isnt ""
-          bg = BackgoundView.collection.findWhere(url: @model.toJSON().background)
-          BackgoundView.changeBackground(bg)
-        else
-          BackgoundView.random()
+        if BackgoundView.model.toJSON().url isnt @model.toJSON().background
+          if @model.toJSON().background isnt ""
+            bg = BackgoundView.collection.findWhere(url: @model.toJSON().background)
+            BackgoundView.changeBackground(bg)
+          else
+            BackgoundView.random()
 
       ###renderQualities: (quality) ->
         qualityView = new QualityView model: quality
