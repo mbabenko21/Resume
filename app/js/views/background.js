@@ -47,7 +47,9 @@
         var model, number;
         number = Math.floor(Math.random() * this.collection.length);
         model = this.collection.at(number);
-        return this.changeBackground(model);
+        if (model.toJSON().url !== this.model.toJSON().url) {
+          return this.changeBackground(model);
+        }
       };
 
       return Background;

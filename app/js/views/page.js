@@ -13,12 +13,45 @@
         return _ref;
       }
 
-      PageTitleView.prototype.el = $(".page-title-container");
+      PageTitleView.prototype.el = ".page-title-container";
 
       PageTitleView.prototype.template = _.template(template);
 
       PageTitleView.prototype.render = function() {
-        return this.$el.html(this.template(this.model.toJSON()));
+        var p, that;
+        that = this;
+        p = this.$el.find("p").first();
+        if (p.html() !== void 0) {
+          return p.animate({
+            "margin-left": "-2000px"
+          }, 1000, function() {
+            that.$el.html(that.template(that.model.toJSON()));
+            return that.show();
+          });
+        } else {
+          this.$el.html(this.template(this.model.toJSON()));
+          return this.show();
+        }
+      };
+
+      PageTitleView.prototype.hide = function() {
+        var p;
+        p = this.$el.find("p").first();
+        if (p.html() !== void 0) {
+          return p.animate({
+            "margin-left": "-2000px"
+          }, 500);
+        }
+      };
+
+      PageTitleView.prototype.show = function() {
+        var p;
+        p = this.$el.find("p").first();
+        if (p.html() !== void 0) {
+          return p.animate({
+            "margin-right": "0px"
+          }, 500);
+        }
       };
 
       return PageTitleView;

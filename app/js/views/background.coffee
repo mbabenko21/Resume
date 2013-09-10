@@ -18,4 +18,5 @@ define ['collections/backgrounds'], (BackgroundsCollection) ->
     random: () ->
       number = Math.floor((Math.random()*@collection.length))
       model = @collection.at(number)
-      @changeBackground(model)
+      if model.toJSON().url isnt @model.toJSON().url
+        @changeBackground model
