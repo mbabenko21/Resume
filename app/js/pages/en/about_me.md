@@ -1,4 +1,4 @@
-#### ![It's me](http://gravatar.com/avatar/22adf4dcb2740b9b668fa0e425e8aee3 "It's me") Hello, **%username%**
+#### ![It's me](http://www.gravatar.com/avatar/22adf4dcb2740b9b668fa0e425e8aee3.png "It's me") Hello, **%username%**
 
 My name's Maksim Babenko. I'm 23 years old and I expert in WEB-developing.
 
