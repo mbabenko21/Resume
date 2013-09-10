@@ -39,6 +39,7 @@ define([
       changeSkill: (event) ->
         @activate @model
         @resume.changePageTitle()
+        BackgoundView.random()
         @router.navigate "!/"+@model.toJSON().link, trigger: true
 
 

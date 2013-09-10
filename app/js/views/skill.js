@@ -47,6 +47,7 @@
       SkillView.prototype.changeSkill = function(event) {
         this.activate(this.model);
         this.resume.changePageTitle();
+        BackgoundView.random();
         return this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });
