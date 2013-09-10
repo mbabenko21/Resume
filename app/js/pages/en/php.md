@@ -1,4 +1,4 @@
-I am consider myself as PHP-developer. **PHP** is language with which I began his career in web development.
+I am consider myself as PHP-developer. **PHP** is language with which I began my career in web development.
 Length of service with this language is more than 5 years.
 
 I apply in practice [OOP][ооп] and [Software design pattern][ПП]:

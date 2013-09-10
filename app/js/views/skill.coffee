@@ -31,6 +31,9 @@ define([
 
       render: () ->
         @$el.html @template @model
+        title = @model.toJSON().page_title[Locale.locale.toJSON().link]
+        @$el.find("img").tooltip title: title, placement: "bottom", delay: { show: 500, hide: 100 }
+
         return @
 
       changeSkill: (event) ->
@@ -48,6 +51,7 @@ define([
       highLightShow: () ->
         if @model.toJSON().active is no
           @showSkill(400)
+        @$el.find("img").tooltip('show')
 
       # Подсветка при опускании
       highLightHide: () ->

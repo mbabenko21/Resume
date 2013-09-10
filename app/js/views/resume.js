@@ -79,11 +79,13 @@
       };
 
       ResumeView.prototype.setHeader = function() {
-        var header;
+        var header, model;
+        model = new HeaderModel();
         header = new HeaderView({
-          model: new HeaderModel()
+          model: model
         });
-        return header.render();
+        header.render();
+        return $("title").text(model.toJSON().title[Locale.locale.toJSON().link]);
       };
 
       return ResumeView;

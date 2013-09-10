@@ -34,7 +34,17 @@
       };
 
       SkillView.prototype.render = function() {
+        var title;
         this.$el.html(this.template(this.model));
+        title = this.model.toJSON().page_title[Locale.locale.toJSON().link];
+        this.$el.find("img").tooltip({
+          title: title,
+          placement: "bottom",
+          delay: {
+            show: 500,
+            hide: 100
+          }
+        });
         return this;
       };
 
@@ -55,8 +65,9 @@
 
       SkillView.prototype.highLightShow = function() {
         if (this.model.toJSON().active === false) {
-          return this.showSkill(400);
+          this.showSkill(400);
         }
+        return this.$el.find("img").tooltip('show');
       };
 
       SkillView.prototype.highLightHide = function() {

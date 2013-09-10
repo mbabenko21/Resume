@@ -14,8 +14,8 @@ I have been involved in projects:
 
 - - -
 
-I am constantly developing their potential and learn something new.
-Ready to learn and explore unfamiliar things for them selves.
+I am constantly enhance my potential and learn something new.
+I am ready to learn and explore unfamiliar things for myself.
 
 I have experience working in team, as well as experience with heavy-duty servers
 

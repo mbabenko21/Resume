@@ -59,7 +59,10 @@ define([
       pt = new PageTitleView model: model
       pt.render()
 
+
     setHeader: () ->
-      header = new HeaderView model: new HeaderModel()
+      model = new HeaderModel()
+      header = new HeaderView model: model
       header.render()
+      $("title").text(model.toJSON().title[Locale.locale.toJSON().link])
 )
