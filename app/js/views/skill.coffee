@@ -35,7 +35,7 @@ define([
 
       changeSkill: (event) ->
         @activate @model
-        #@resume.render()
+        @resume.changePageTitle()
         @router.navigate "!/"+@model.toJSON().link, trigger: true
 
 
