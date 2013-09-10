@@ -44,8 +44,7 @@
         this.select(this.collection.findWhere({
           link: id
         }));
-        this.app.resume.setHeader();
-        return this.app.resume.changePageTitle();
+        return this.app.resume.render();
       };
 
       LocaleView.prototype.clear = function() {

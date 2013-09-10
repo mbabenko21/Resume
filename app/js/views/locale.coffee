@@ -24,8 +24,7 @@ define [
     change: (event) ->
       id = $(event.target).attr "id"
       @select(@collection.findWhere link: id)
-      @app.resume.setHeader()
-      @app.resume.changePageTitle()
+      @app.resume.render()
 
     clear: () ->
       locale = @collection.findWhere({active: true})
