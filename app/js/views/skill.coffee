@@ -32,7 +32,7 @@ define([
       render: () ->
         @$el.html @template @model
         title = @model.toJSON().page_title[Locale.locale.toJSON().link]
-        @$el.find("img").tooltip title: title, placement: "bottom", delay: { show: 500, hide: 100 }
+        @$el.find("img").tooltip title: title, placement: "bottom"
 
         return @
 

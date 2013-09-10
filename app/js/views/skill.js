@@ -39,11 +39,7 @@
         title = this.model.toJSON().page_title[Locale.locale.toJSON().link];
         this.$el.find("img").tooltip({
           title: title,
-          placement: "bottom",
-          delay: {
-            show: 500,
-            hide: 100
-          }
+          placement: "bottom"
         });
         return this;
       };
