@@ -40,7 +40,6 @@ define [
       el.addClass("circle").addClass("text-danger")
       @setLocale model.toJSON().link
       activeModel = @app.resume.collection.findWhere({active: true})
-      console.log activeModel.toJSON().link
       @app.controller.navigate "!//" + activeModel.toJSON().link, {trigger: true}
 
 

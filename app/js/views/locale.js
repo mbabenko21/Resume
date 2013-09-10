@@ -78,7 +78,6 @@
         activeModel = this.app.resume.collection.findWhere({
           active: true
         });
-        console.log(activeModel.toJSON().link);
         return this.app.controller.navigate("!//" + activeModel.toJSON().link, {
           trigger: true
         });
