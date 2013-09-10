@@ -124,7 +124,7 @@ define([],
         link: "contact-me"
         page_title: {en: "My contacts", ru: "Мои контакты"},
         thumbnail: "/images/contacts.png"
-        background: "/images/knitted-netting.png"
+        background: "/images/little_pluses.png"
         quality: [
           {title: "Обратная связь"}
         ]
