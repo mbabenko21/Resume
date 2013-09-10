@@ -47,6 +47,7 @@ define([
       skillView.hideSkill()
       if skill.toJSON().active is on
         skillView.showSkill()
+        skillView.changeBG()
 
 
 

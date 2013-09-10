@@ -12,7 +12,7 @@
           ru: "Обо мне"
         },
         thumbnail: "/images/man.png",
-        background: "#333",
+        background: "/images/bedge_grunge.png",
         active: true,
         quality: [
           {
@@ -38,7 +38,7 @@
           ru: "Мои PHP навыки"
         },
         thumbnail: "/images/php.png",
-        background: "",
+        background: "/images/bedge_grunge.png",
         quality: [
           {
             title: "Symfony 2"
@@ -73,7 +73,7 @@
           ru: "Знания баз данных"
         },
         thumbnail: "/images/database.png",
-        background: "",
+        background: "/images/bedge_grunge.png",
         quality: [
           {
             title: "Mysql"
@@ -90,7 +90,7 @@
           ru: "Изучение Node.JS"
         },
         thumbnail: "/images/node.png",
-        background: "",
+        background: "/images/subtle_orange_emboss.png",
         quality: [
           {
             title: "ExpressJS"
@@ -113,7 +113,7 @@
           ru: "Javascript"
         },
         thumbnail: "/images/javascript.png",
-        background: "",
+        background: "/images/subtle_orange_emboss.png",
         quality: [
           {
             title: "JQuery"
@@ -134,7 +134,7 @@
           ru: "Использование linux"
         },
         thumbnail: "/images/ubuntu.png",
-        background: "",
+        background: "/images/subtle_orange_emboss.png",
         quality: [
           {
             title: "unix-console"
@@ -149,7 +149,7 @@
           ru: "Мое портфолио"
         },
         thumbnail: "/images/papka.png",
-        background: "",
+        background: "/images/little_pluses.png",
         quality: [
           {
             title: "Сайт-визитка"
@@ -172,7 +172,7 @@
           ru: "Использование системы контролля версий"
         },
         thumbnail: "/images/cvs.png",
-        background: "",
+        background: "/images/little_pluses.png",
         quality: [
           {
             title: "Github"
@@ -189,7 +189,7 @@
           ru: "Мои контакты"
         },
         thumbnail: "/images/contacts.png",
-        background: "",
+        background: "/images/knitted-netting.png",
         quality: [
           {
             title: "Обратная связь"

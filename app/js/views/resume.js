@@ -57,7 +57,8 @@
         this.$el.append(skillView.render().el);
         skillView.hideSkill();
         if (skill.toJSON().active === true) {
-          return skillView.showSkill();
+          skillView.showSkill();
+          return skillView.changeBG();
         }
       };
 

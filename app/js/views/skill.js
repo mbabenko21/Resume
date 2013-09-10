@@ -47,10 +47,22 @@
       SkillView.prototype.changeSkill = function(event) {
         this.activate(this.model);
         this.resume.changePageTitle();
-        BackgoundView.random();
+        this.changeBG();
         return this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });
+      };
+
+      SkillView.prototype.changeBG = function() {
+        var bg;
+        if (this.model.toJSON().background !== "") {
+          bg = BackgoundView.collection.findWhere({
+            url: this.model.toJSON().background
+          });
+          return BackgoundView.changeBackground(bg);
+        } else {
+          return BackgoundView.random();
+        }
       };
 
       /*renderQualities: (quality) ->
@@ -116,17 +128,19 @@
         newActive = this.resume.collection.findWhere({
           id: model.get("id")
         });
-        oldActive.set({
-          active: false
-        });
-        newActive.set({
-          active: true
-        });
-        newActive.set({
-          "class": "active"
-        });
-        this.showSkill(0, newActive);
-        return this.deactive(oldActive);
+        if (newActive.toJSON().id !== oldActive.toJSON().id) {
+          oldActive.set({
+            active: false
+          });
+          newActive.set({
+            active: true
+          });
+          newActive.set({
+            "class": "active"
+          });
+          this.showSkill(0, newActive);
+          return this.deactive(oldActive);
+        }
       };
 
       SkillView.prototype.deactive = function(model) {

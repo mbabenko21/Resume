@@ -33,15 +33,20 @@ define([
         @$el.html @template @model
         title = @model.toJSON().page_title[Locale.locale.toJSON().link]
         @$el.find("img").tooltip title: title, placement: "bottom"
-
         return @
 
       changeSkill: (event) ->
         @activate @model
         @resume.changePageTitle()
-        BackgoundView.random()
+        @changeBG()
         @router.navigate "!/"+@model.toJSON().link, trigger: true
 
+      changeBG: () ->
+        if @model.toJSON().background isnt ""
+          bg = BackgoundView.collection.findWhere(url: @model.toJSON().background)
+          BackgoundView.changeBackground(bg)
+        else
+          BackgoundView.random()
 
       ###renderQualities: (quality) ->
         qualityView = new QualityView model: quality
@@ -82,11 +87,12 @@ define([
       activate: (model) ->
         oldActive = @resume.collection.findWhere active: true
         newActive = @resume.collection.findWhere id: model.get "id"
-        oldActive.set active: false
-        newActive.set active: true
-        newActive.set class: "active"
-        @showSkill 0, newActive
-        @deactive oldActive
+        if newActive.toJSON().id isnt oldActive.toJSON().id
+          oldActive.set active: false
+          newActive.set active: true
+          newActive.set class: "active"
+          @showSkill 0, newActive
+          @deactive oldActive
 
       # Деактивация модели
       deactive: (model) ->

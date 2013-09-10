@@ -7,7 +7,7 @@ define([],
         link: "about-me",
         page_title: {en: "About me", ru: "Обо мне"},
         thumbnail: "/images/man.png",
-        background: "#333",
+        background: "/images/bedge_grunge.png",
         active: true
         quality: [
           {title: "Усидчивость"},
@@ -24,7 +24,7 @@ define([],
         link: "php",
         page_title: {en: "My PHP skills", ru: "Мои PHP навыки"},
         thumbnail: "/images/php.png",
-        background: "",
+        background: "/images/bedge_grunge.png",
         quality: [
           {title: "Symfony 2"},
           {title: "Doctrine"},
@@ -45,7 +45,7 @@ define([],
         link: "database",
         page_title: {en: "Database knowledge", ru: "Знания баз данных"},
         thumbnail: "/images/database.png",
-        background: "",
+        background: "/images/bedge_grunge.png",
         quality: [
           {title: "Mysql"},
           {title: "MongoDB"}
@@ -57,7 +57,7 @@ define([],
         link: "node.js",
         page_title: {en: "Node.JS learning", ru: "Изучение Node.JS"},
         thumbnail: "/images/node.png",
-        background: "",
+        background: "/images/subtle_orange_emboss.png",
         quality: [
           {title: "ExpressJS"},
           {title: "Socket.IO"},
@@ -72,7 +72,7 @@ define([],
         link: "javascript",
         page_title: {en: "Javascript", ru: "Javascript"},
         thumbnail: "/images/javascript.png",
-        background: "",
+        background: "/images/subtle_orange_emboss.png",
         quality: [
           {title: "JQuery"},
           {title: "BackboneJS"},
@@ -86,7 +86,7 @@ define([],
         link: "linux",
         page_title: {en: "Linux usage", ru: "Использование linux"},
         thumbnail: "/images/ubuntu.png",
-        background: "",
+        background: "/images/subtle_orange_emboss.png",
         quality: [
           {title: "unix-console"}
         ]
@@ -97,7 +97,7 @@ define([],
         link: "portfolio"
         page_title: {en: "My portfolio", ru: "Мое портфолио"},
         thumbnail: "/images/papka.png",
-        background: ""
+        background: "/images/little_pluses.png"
         quality: [
           {title: "Сайт-визитка"}
           {title: "Likedimion"}
@@ -112,7 +112,7 @@ define([],
         link: "git",
         page_title: {en: "Use system version controll", ru: "Использование системы контролля версий"},
         thumbnail: "/images/cvs.png",
-        background: "",
+        background: "/images/little_pluses.png",
         quality: [
           {title: "Github"},
           {title: "Bitbucket"}
@@ -124,7 +124,7 @@ define([],
         link: "contact-me"
         page_title: {en: "My contacts", ru: "Мои контакты"},
         thumbnail: "/images/contacts.png"
-        background: ""
+        background: "/images/knitted-netting.png"
         quality: [
           {title: "Обратная связь"}
         ]
