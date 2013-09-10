@@ -2,11 +2,15 @@ define([
     "collections/skills"
     "views/skill"
     "views/page"
+    "views/header"
+    "models/header"
     "controller"
 ],
-(SkillsCollection, SkillView, PageTitleView, ResumeController) ->
+(SkillsCollection, SkillView, PageTitleView, HeaderView, HeaderModel, ResumeController) ->
   class ResumeView extends Backbone.View
     el: $(".resume-container")
+    events:
+      "mouseover": "over"
     initialize: (options) ->
       {@app, @locale} = options
       @collection = new SkillsCollection @app.skills
@@ -56,9 +60,6 @@ define([
       pt.render()
 
     setHeader: () ->
-      el = $("#advert_text")
-      if Locale.locale.toJSON().link is "ru"
-        el.find("h3").text("Резюме WEB-разработчика")
-      else
-        el.find("h3").text("WEB-developer resume")
+      header = new HeaderView model: new HeaderModel()
+      header.render()
 )

@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["collections/skills", "views/skill", "views/page", "controller"], function(SkillsCollection, SkillView, PageTitleView, ResumeController) {
+  define(["collections/skills", "views/skill", "views/page", "views/header", "models/header", "controller"], function(SkillsCollection, SkillView, PageTitleView, HeaderView, HeaderModel, ResumeController) {
     var ResumeView, _ref;
     return ResumeView = (function(_super) {
       __extends(ResumeView, _super);
@@ -14,6 +14,10 @@
       }
 
       ResumeView.prototype.el = $(".resume-container");
+
+      ResumeView.prototype.events = {
+        "mouseover": "over"
+      };
 
       ResumeView.prototype.initialize = function(options) {
         this.app = options.app, this.locale = options.locale;
@@ -75,13 +79,11 @@
       };
 
       ResumeView.prototype.setHeader = function() {
-        var el;
-        el = $("#advert_text");
-        if (Locale.locale.toJSON().link === "ru") {
-          return el.find("h3").text("Резюме WEB-разработчика");
-        } else {
-          return el.find("h3").text("WEB-developer resume");
-        }
+        var header;
+        header = new HeaderView({
+          model: new HeaderModel()
+        });
+        return header.render();
       };
 
       return ResumeView;

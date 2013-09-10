@@ -40,7 +40,6 @@
 
       SkillView.prototype.changeSkill = function(event) {
         this.activate(this.model);
-        this.resume.render();
         return this.router.navigate("!/" + this.model.toJSON().link, {
           trigger: true
         });

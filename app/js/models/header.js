@@ -4,24 +4,23 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define([], function() {
-    var SkillModel, _ref;
-    return SkillModel = (function(_super) {
-      __extends(SkillModel, _super);
+    var HeaderModel, _ref;
+    return HeaderModel = (function(_super) {
+      __extends(HeaderModel, _super);
 
-      function SkillModel() {
-        _ref = SkillModel.__super__.constructor.apply(this, arguments);
+      function HeaderModel() {
+        _ref = HeaderModel.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      SkillModel.prototype.defaults = {
-        thumbnail: "/images/unknown.png",
-        w: 85,
-        h: 85,
-        active: false,
-        "class": ""
+      HeaderModel.prototype.defaults = {
+        title: {
+          en: "Web-developer resume",
+          ru: "Резюме WEB-разработчика"
+        }
       };
 
-      return SkillModel;
+      return HeaderModel;
 
     })(Backbone.Model);
   });
